@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.marwadtech.userapp.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_languageSelectionBottomSheetFragment"
+            app:destination="@id/languageSelectionBottomSheetFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_selectRoleFragment"
+            app:destination="@id/selectRoleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.marwadtech.userapp.ui.auth.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_languageSelectionBottomSheetFragment"
+            app:destination="@id/languageSelectionBottomSheetFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_selectRoleFragment"
+            app:destination="@id/selectRoleFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/languageSelectionBottomSheetFragment"
+        android:name="com.marwadtech.userapp.ui.auth.LanguageSelectionBottomSheetFragment"
+        android:label="fragment_language_selection_bottom_sheet"
+        tools:layout="@layout/fragment_language_selection_bottom_sheet" >
+        <action
+            android:id="@+id/action_languageSelectionBottomSheetFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_languageSelectionBottomSheetFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.marwadtech.userapp.ui.auth.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectRoleFragment"
+        android:name="com.marwadtech.userapp.ui.auth.SelectRoleFragment"
+        android:label="fragment_select_role"
+        tools:layout="@layout/fragment_select_role" >
+        <action
+            android:id="@+id/action_selectRoleFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_selectRoleFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

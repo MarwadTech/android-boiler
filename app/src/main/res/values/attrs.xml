@@ -1,0 +1,42 @@
+<resources>
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
+
+    <attr name="eTitle" format="string"/>
+    <attr name="eContent" format="string"/>
+    <attr name="eHint" format="string"/>
+
+    <declare-styleable name="ExtendedEntryText">
+        <attr name="eTitle"/>
+        <attr name="eContent"/>
+        <attr name="eHint" />
+        <attr name="eIsEnable" format="boolean"/>
+        <attr name="eStartFocus" format="boolean"/>
+        <attr name="eMaxCharNumber" format="integer"/>
+        <attr name="eInputType" format="enum">
+            <enum name="text" value="0"/>
+            <enum name="integer" value="1"/>
+            <enum name="email" value="2"/>
+            <enum name="password" value="3"/>
+            <enum name="phone" value="4"/>
+            <enum name="suburb" value="5"/>
+            <enum name="calendar" value="6"/>
+            <enum name="budget" value="7"/>
+            <enum name="spinner" value="8"/>
+            <enum name="autoComplete" value="9"/>
+            <enum name="verify" value="10"/>
+        </attr>
+        <attr name="eImeOptions" format="enum">
+            <enum name="actionNext" value="0"/>
+            <enum name="actionDone" value="1"/>
+            <enum name="normal" value="2"/>
+        </attr>
+        <attr name="eBoxSize" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="small" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

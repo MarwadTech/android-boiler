@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Neutral colors -->
+    <color name="N900">#091E42</color>
+    <color name="N800">#172B4D</color>
+    <color name="N700">#253858</color>
+    <color name="N600">#344563</color>
+    <color name="N500">#42526E</color>
+    <color name="N400">#505F79</color>
+    <color name="N300">#5E6C84</color>
+    <color name="N200">#6B778C</color>
+    <color name="N100">#7A869A</color>
+    <color name="N090">#8993A4</color>
+    <color name="N080">#97A0AF</color>
+    <color name="N070">#A5ADBA</color>
+    <color name="N060">#B3BAC5</color>
+    <color name="N050">#C1C7D0</color>
+    <color name="N040">#DFE1E6</color>
+    <color name="N030">#EBECF0</color>
+    <color name="N020">#F4F5F7</color>
+    <color name="N010">#FAFBFC</color>
+    <color name="N000">#FFFFFF</color>
+
+    <!-- Primary colors -->
+    <color name="P500">#344093</color>
+    <color name="P400">#4655C4</color>
+    <color name="P300">#586BF5</color>
+    <color name="P200">#7988F7</color>
+    <color name="P100">#9AA6F9</color>
+    <color name="P075">#BCC3FB</color>
+    <color name="P050">#DDE1FD</color>
+
+    <!-- Reddish colors -->
+    <color name="R500">#BF2600</color>
+    <color name="R400">#DE350B</color>
+    <color name="R300">#FF5630</color>
+    <color name="R200">#FF7452</color>
+    <color name="R100">#FF8F73</color>
+    <color name="R075">#FFBDAD</color>
+    <color name="R050">#FFEBE6</color>
+
+    <!-- Yellowish colors -->
+    <color name="Y800">#664400</color>
+    <color name="Y500">#FF8B00</color>
+    <color name="Y400">#FF991F</color>
+    <color name="Y300">#FFAB00</color>
+    <color name="Y200">#FFC400</color>
+    <color name="Y100">#FFE380</color>
+    <color name="Y075">#FFF0B3</color>
+    <color name="Y050">#FFFAE6</color>
+
+    <!-- Greenish colors -->
+    <color name="G500">#006644</color>
+    <color name="G400">#00875A</color>
+    <color name="G300">#36B37E</color>
+    <color name="G200">#57D9A3</color>
+    <color name="G100">#79F2C0</color>
+    <color name="G075">#ABF5D1</color>
+    <color name="G050">#E3FCEF</color>
+
+</resources>

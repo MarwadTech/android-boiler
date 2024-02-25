@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".ui.auth.IntroActivity">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_0"
+        app:layout_constraintBottom_toTopOf="@id/layoutDots"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="@dimen/spacing_xlarge"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toBottomOf="@id/view_pager" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        style="@style/materialButtonRound.solid"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_marginBottom="@dimen/dimen_40"
+        android:drawableEnd="@drawable/ic_arrow_white"
+        android:drawablePadding="@dimen/dimen_5"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/dimen_25"
+        android:text="@string/next"
+        android:textSize="@dimen/_18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintTop_toBottomOf="@id/layoutDots" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_20" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

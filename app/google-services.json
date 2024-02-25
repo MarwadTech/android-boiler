@@ -1,0 +1,30 @@
+
+{
+  "project_info": {
+    "project_number": "335623827886",
+    "project_id": "boiler-plate-af684",
+    "storage_bucket": "boiler-plate-af684.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335623827886:android:ee8a5772dd24339e08183f",
+        "android_client_info": {
+          "package_name": "com.marwadtech.userapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLAykRHDr2djUolD9PeR02IW37Pb0qRuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/dimen_15"
+    app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dimen_15">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSuccess"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_40"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            android:src="@drawable/ic_success"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintBottom_toTopOf="@id/txtVerification"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtVerification"
+            style="@style/materialText_medium_20"
+            android:textColor="@color/purple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/dimen_30"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/verification_is_successfully"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintTop_toBottomOf="@id/imgSuccess"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toEndOf="@id/glLeft"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+       \
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

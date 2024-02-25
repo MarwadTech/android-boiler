@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CommonCardView"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dimen_15">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancel_grey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/txtVerification"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtVerification"
+            style="@style/materialText_medium_20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/verification"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintBottom_toTopOf="@id/txtEnterOtp"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toEndOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/imgCancel"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtEnterOtp"
+            style="@style/materialText_medium_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:paddingVertical="@dimen/dimen_5"
+            android:text="@string/enter_otp_to_verify"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_11sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/edtOTP"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/txtVerification" />
+
+
+        <com.chaos.view.PinView
+            android:id="@+id/edtOTP"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Hin.%d"
+            android:inputType="text"
+            android:padding="@dimen/dimen_5"
+            android:textColor="@color/grey_black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorColor="@color/purple"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="true"
+            app:itemCount="6"
+            app:itemHeight="48dp"
+            app:itemRadius="@dimen/dimen_5"
+            app:itemSpacing="@dimen/dimen_5"
+            app:itemWidth="@dimen/dimen_50"
+            android:layout_marginBottom="@dimen/dimen_10"
+            app:layout_constraintBottom_toTopOf="@id/txtResentOtpTime"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/txtEnterOtp"
+            app:lineColor="@color/grey"
+            app:lineWidth="@dimen/dimen_2"
+            app:viewType="rectangle" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtResentOtpTime"
+            style="@style/materialText_medium_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:paddingVertical="@dimen/dimen_5"
+            android:text="@string/resend_otp_timer"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/_11sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/btnResentOtp"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/edtOTP" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btnResentOtp"
+            style="@style/materialText_medium_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_light_red"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:paddingVertical="@dimen/dimen_5"
+            android:text="@string/resend_otp"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_10sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/txtResentOtpTime" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            style="@style/materialButtonRound.solid_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/submit"
+            android:textSize="@dimen/_12sp"
+            android:paddingHorizontal="@dimen/dimen_35"
+            android:layout_marginTop="@dimen/dimen_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/btnResentOtp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

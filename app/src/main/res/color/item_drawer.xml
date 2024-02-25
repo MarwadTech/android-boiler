@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~   Created by Jarsys Technology Private Limited on 18/4/21 12:27 PM
+  ~   Copyright (c) 2021 . All rights reserved.
+  ~   Last modified 18/4/21 12:27 PM
+  ~  */
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/black" android:state_checked="true" />
+    <item android:color="@color/grey_new" />
+</selector>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Item checked -->
+    <item android:color="@color/colorJobAssignedSelected" android:state_selected="true" />
+    <!-- Item pressed -->
+    <item android:color="@color/colorJobNotSelected" android:state_selected="false" />
+
+</selector>

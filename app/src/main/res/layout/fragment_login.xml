@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_img"
+    tools:context=".ui.auth.LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtLogin"
+            style="@style/materialText_semi_bold_25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:gravity="center"
+            android:text="@string/login"
+            app:layout_constraintBottom_toTopOf="@id/txtTagLine"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtTagLine"
+            style="@style/materialText_regular_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:gravity="center"
+            android:text="@string/welcome_to_join_finder_community"
+            app:layout_constraintBottom_toTopOf="@id/edtMobileNumber"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/txtLogin" />
+
+        <com.marwadtech.userapp.widget.ExtendedEntryText
+            android:id="@+id/edtMobileNumber"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sp"
+            app:eHint="@string/mobile_number"
+            app:eInputType="phone"
+            app:eMaxCharNumber="10"
+            app:eTitle="@string/mobile_number"
+            app:layout_constraintBottom_toTopOf="@id/edtPassword"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/txtTagLine" />
+
+
+        <com.marwadtech.userapp.widget.ExtendedEntryText
+            android:id="@+id/edtPassword"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sp"
+            app:eHint="@string/password"
+            app:eInputType="password"
+            app:eMaxCharNumber="10"
+            app:eTitle="@string/password"
+            app:layout_constraintBottom_toTopOf="@id/chkBox"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/edtMobileNumber" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtForgot"
+            style="@style/materialText_regular_12"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_24"
+            android:clickable="true"
+            android:gravity="end"
+            android:text="@string/forgot_password_Q"
+            android:textColor="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@id/chkBox"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toEndOf="@id/chkBox"
+            app:layout_constraintTop_toTopOf="@id/chkBox" />
+
+        <CheckBox
+            android:id="@+id/chkBox"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:button="@drawable/checkbox_selector"
+            android:buttonTint="@color/purple"
+            android:checked="true"
+            android:includeFontPadding="true"
+            android:paddingHorizontal="@dimen/dimen_5"
+            android:text="@string/remember_me"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintBottom_toTopOf="@id/btnLogin"
+            app:layout_constraintEnd_toStartOf="@id/txtForgot"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            style="@style/materialButtonRound.solid"
+            android:layout_width="@dimen/dimen_200"
+            android:layout_height="@dimen/dimen_70"
+            android:layout_marginTop="@dimen/dimen_167"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/login"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toTopOf="@id/txtCaption"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/chkBox" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtCaption"
+            style="@style/materialText_regular_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_10"
+            android:gravity="end"
+            android:text="@string/not_have_an_account"
+            android:textSize="@dimen/_15sp"
+            app:layout_constraintEnd_toStartOf="@id/txtCreateAccount"
+            app:layout_constraintStart_toStartOf="@id/btnLogin"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtCreateAccount"
+            style="@style/materialText_Semi_Bold_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:gravity="start"
+            android:text="@string/create_account"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/_15sp"
+            app:layout_constraintBottom_toBottomOf="@id/txtCaption"
+            app:layout_constraintEnd_toEndOf="@id/btnLogin"
+            app:layout_constraintStart_toEndOf="@id/txtCaption"
+            app:layout_constraintTop_toTopOf="@id/txtCaption" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_20" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

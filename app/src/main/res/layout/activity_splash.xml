@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/ThemeOverlay.Localfinds.FullscreenContainer"
+    tools:context=".SplashActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10"
+        android:padding="@dimen/dimen_20"
+        app:cardCornerRadius="@dimen/dimen_15"
+        app:cardElevation="@dimen/dimen_5"
+        >
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_20"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgProgressBar"
+        android:layout_width="@dimen/dimen_110"
+        android:layout_height="@dimen/dimen_110"
+        android:layout_gravity="center"
+        android:src="@drawable/loading"
+        android:visibility="visible"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/materialText_medium_22"
+        android:id="@+id/txtVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/local_finds"
+        android:textColor="@color/purple"
+      android:textSize="@dimen/_30sp"
+             />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
