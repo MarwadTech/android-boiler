@@ -11,17 +11,8 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_languageSelectionBottomSheetFragment"
-            app:destination="@id/languageSelectionBottomSheetFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_selectRoleFragment"
-            app:destination="@id/selectRoleFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_otpVerificationFragment"
-            app:destination="@id/otpVerificationFragment" />
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
@@ -32,29 +23,13 @@
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
-            android:id="@+id/action_registrationFragment_to_languageSelectionBottomSheetFragment"
-            app:destination="@id/languageSelectionBottomSheetFragment" />
-        <action
-            android:id="@+id/action_registrationFragment_to_selectRoleFragment"
-            app:destination="@id/selectRoleFragment" />
-        <action
-            android:id="@+id/action_registrationFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
             android:id="@+id/action_registrationFragment_to_otpVerificationFragment"
             app:destination="@id/otpVerificationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/languageSelectionBottomSheetFragment"
-        android:name="com.marwadtech.userapp.ui.auth.LanguageSelectionBottomSheetFragment"
-        android:label="fragment_language_selection_bottom_sheet"
-        tools:layout="@layout/fragment_language_selection_bottom_sheet" >
         <action
-            android:id="@+id/action_languageSelectionBottomSheetFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_languageSelectionBottomSheetFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -63,31 +38,30 @@
         tools:layout="@layout/fragment_forgot_password" >
         <action
             android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_forgotPasswordFragment_to_otpVerificationFragment"
             app:destination="@id/otpVerificationFragment" />
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_resetPasswordFragment2"
-            app:destination="@id/resetPasswordFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectRoleFragment"
-        android:name="com.marwadtech.userapp.ui.auth.SelectRoleFragment"
-        android:label="fragment_select_role"
-        tools:layout="@layout/fragment_select_role" >
-        <action
-            android:id="@+id/action_selectRoleFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
-        <action
-            android:id="@+id/action_selectRoleFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/otpVerificationFragment"
         android:name="com.marwadtech.userapp.ui.auth.OtpVerificationFragment"
         android:label="fragment_otp_verification"
         tools:layout="@layout/fragment_otp_verification" >
+        <argument
+            android:name="userData"
+            app:argType="com.marwadtech.userapp.retrofit.models.request.UserRequestModel"
+            app:nullable="true"/>
+        <argument
+            android:name="otpType"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="isFromRegister"
+            app:argType="boolean"
+            android:defaultValue="true"/>
         <action
             android:id="@+id/action_otpVerificationFragment_to_resetPasswordFragment"
             app:destination="@id/resetPasswordFragment" />

@@ -32,7 +32,6 @@ class SplashActivity : AppCompatActivity() {
 //            return
 //        }
         if (spUtils.isLoggedIn){
-
             goNextScreenDashboard()
         }else{
             goNextScreenAuth()
@@ -66,6 +65,7 @@ class SplashActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
+        finish()
     }
 
     private fun goDashBoard() {

@@ -5,7 +5,9 @@ package com.marwadtech.userapp.dialogs
 import android.app.Activity
 import android.app.Dialog
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import com.bumptech.glide.Glide
 import com.marwadtech.userapp.R
 
@@ -17,22 +19,30 @@ class ProgressDialog() {
         val dialogView = View.inflate(context, R.layout.dialog_progress, null)
         dialog = Dialog(context, R.style.CustomDialog)
         val imgProgressBar = dialogView.findViewById<ImageView>(R.id.imgProgressBar)
-        Glide.with(context)
-            .asGif()
-            .load(R.drawable.loading)
-            .into(imgProgressBar)
+        Glide.with(context).asGif().load(R.drawable.loading).into(imgProgressBar)
         dialog.setContentView(dialogView)
         dialog.setCancelable(false)
+        setTransparentBackground(dialogView)
+    }
+
+    private fun setTransparentBackground(dialogView: View) {
+        dialog.apply {
+            setOnShowListener {
+                val progressOuterCard = dialogView.findViewById<CardView>(R.id.progressOuterCard)
+                progressOuterCard?.setBackgroundResource(android.R.color.transparent)
+            }
+        }
     }
 
     fun show() {
-        if (!dialog.isShowing)
+        if (!dialog.isShowing) {
+            dialog.window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
             dialog.show()
+        }
     }
 
     fun dismiss() {
-        if (dialog.isShowing)
-            dialog.dismiss()
+        if (dialog.isShowing) dialog.dismiss()
     }
 
     fun setLoading(isLoading: Boolean) {
@@ -43,9 +53,6 @@ class ProgressDialog() {
         }
     }
 }
-
-
-
 
 
 //import android.app.AlertDialog

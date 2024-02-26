@@ -57,4 +57,19 @@
     <string name="enter_verification_code">Enter Verification Code</string>
     <string name="phone_number_email">phone number/Email</string>
     <string name="confirm_password">Confirm Password</string>
+
+    <!--Boiler plate validation-->
+
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="please_enter_mobile_number">Please enter a mobile number</string>
+    <string name="please_enter_valid_mobile_number">Please enter a valid mobile number</string>
+    <string name="please_enter_password">Please enter a password</string>
+    <string name="please_enter_valid_password">Please enter a valid password</string>
+    <string name="please_enter_email">Please enter an email</string>
+    <string name="please_enter_valid_email">Please enter a valid email</string>
+    <string name="please_accept_terms_and_conditions">Please accept the terms and conditions</string>
+    <string name="please_enter_mobile_number_or_email">Please enter mobile number or email</string>
+
+
+
 </resources>
