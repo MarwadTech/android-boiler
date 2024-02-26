@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.RegistrationFragment">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_height="@dimen/dimen_0">
+
+
+
+
+            <EditText
+                android:id="@+id/edtName"
+                android:focusedByDefault="false"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@drawable/shape_rounded_outline_input_text"
+                android:drawableStart="@drawable/ic_user_grey"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/name"
+                android:textColorHint="@color/grey_999"
+                android:inputType="text"
+                android:maxLength="23"
+                android:textColor="@color/black_26"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@id/edtMobileNumber"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/imgLogin" />
+
+
+
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                style="@style/materialText_Semi_Bold_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:gravity="center"
+                android:text="@string/welcome"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@id/imgLogin"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/imgLogin"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_login"
+                app:layout_constraintBottom_toTopOf="@id/edtName"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtWelcome" />
+
+
+            <TextView
+                android:id="@+id/txtGetCode"
+                style="@style/materialText_Semi_Bold_16"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:text="@string/get_code"
+                android:background="?android:selectableItemBackground"
+                android:paddingVertical="@dimen/dimen_5"
+                android:visibility="gone"
+                android:textColor="@color/grey_999"
+                android:layout_marginEnd="@dimen/dimen_15"
+                app:layout_constraintTop_toTopOf="@id/edtMobileNumber"
+                app:layout_constraintBottom_toBottomOf="@id/edtMobileNumber"
+                app:layout_constraintEnd_toEndOf="@id/edtMobileNumber"/>
+
+            <EditText
+                android:id="@+id/edtMobileNumber"
+                android:focusedByDefault="false"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/shape_rounded_outline_input_text"
+                android:drawableStart="@drawable/ic_call_grey"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/phone_number"
+                android:textColorHint="@color/grey_999"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:maxLength="10"
+                android:textColor="@color/black_26"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@id/edtMail"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtName" />
+
+
+            <EditText
+                android:id="@+id/edtMail"
+                android:focusedByDefault="false"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/shape_rounded_outline_input_text"
+                android:drawableStart="@drawable/ic_call_grey"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/email"
+                android:textColorHint="@color/grey_999"
+                android:inputType="textWebEmailAddress"
+                android:textColor="@color/black_26"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@id/edtPassword"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtMobileNumber" />
+
+
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:focusedByDefault="false"
+                android:background="@drawable/shape_rounded_outline_input_text"
+                android:drawableStart="@drawable/ic_password_grey"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/password"
+                android:textColorHint="@color/grey_999"
+                android:inputType="textPassword"
+                android:maxLength="12"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@id/txtForgot"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtMail" />
+
+
+
+            <ImageButton
+                android:id="@+id/imgBtnToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_eye_hide"
+                android:padding="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_15"
+                app:layout_constraintTop_toTopOf="@id/edtPassword"
+                app:layout_constraintBottom_toBottomOf="@id/edtPassword"
+                app:layout_constraintEnd_toEndOf="@id/edtPassword"/>
+
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbTermsAndConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:checked="false"
+                android:button="@drawable/checkbox_filter_selector"
+                android:layout_marginTop="@dimen/dimen_50"
+                app:layout_constraintHorizontal_bias=".01"
+                app:layout_constraintVertical_bias="1.1"
+                android:paddingHorizontal="@dimen/dimen_5"
+                android:text="@string/terms_conditions"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/grey_4d"
+                android:drawablePadding="@dimen/dimen_10"
+                android:textSize="@dimen/_14sp"
+                android:layout_marginBottom="@dimen/dimen_3"
+                app:layout_constraintTop_toBottomOf="@id/edtPassword"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintBottom_toTopOf="@id/btnSignUp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTermsAndConditions"
+                android:text="@string/terms_conditions_blue"
+                android:textSize="@dimen/_14sp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toEndOf="@id/cbTermsAndConditions"
+                app:layout_constraintTop_toTopOf="@id/cbTermsAndConditions"
+                app:layout_constraintBottom_toBottomOf="@id/cbTermsAndConditions"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUp"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_60"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/sign_up"
+                app:cornerRadius="@dimen/dimen_8"
+                android:textSize="@dimen/_16sp"
+                android:layout_marginBottom="@dimen/dimen_20"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintBottom_toTopOf="@id/txtLogin"
+                app:layout_constraintStart_toStartOf="@id/glLeft" />
+
+
+            <TextView
+                android:id="@+id/txtLogin"
+                style="@style/materialText_medium_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dimen_8"
+                android:text="@string/already_have_an_account"
+                android:layout_marginBottom="@dimen/dimen_40"
+                app:layout_constraintVertical_bias="1.1"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glRight"  />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_20" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_20" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

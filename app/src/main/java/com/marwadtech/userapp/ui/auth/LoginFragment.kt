@@ -38,8 +38,19 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun setClickListener() {
+
+        binding.txtSignUpUsing.setOnClickListener(){
+            val directions = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
+            findNavController().navigate(directions)
+        }
+
         binding.txtCreateAccount.setOnClickListener(){
-            val directions = LoginFragmentDirections.actionLoginFragmentToSelectRoleFragment()
+            val directions = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
+            findNavController().navigate(directions)
+        }
+
+        binding.txtForgot.setOnClickListener(){
+            val directions = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
             findNavController().navigate(directions)
         }
 
