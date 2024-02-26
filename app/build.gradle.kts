@@ -93,6 +93,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
     val nav_version = "2.7.4"
 
     implementation("androidx.core:core-ktx:1.12.0")
