@@ -298,6 +298,10 @@
     <color name="light_green_A200">#B2FF59</color>
     <color name="light_green_A400">#76FF03</color>
     <color name="light_green_A700">#64DD17</color>
+    <color name="rating_green">#33D00B</color>
+    <color name="dark_spring_green">#0E8345</color>
+    <color name="pinkish_red">#DE1135</color>
+    <color name="reddish_orange">#F0742E</color>
 
     <color name="amber_50">#FFF8E1</color>
     <color name="amber_100">#FFECB3</color>
