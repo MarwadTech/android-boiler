@@ -15,7 +15,7 @@ data class ErrorResponse(
 )
 
 data class Error(
-    val key: String,
+    val field: String,
     val message: String
 )
 

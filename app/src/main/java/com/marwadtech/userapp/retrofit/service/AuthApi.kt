@@ -25,4 +25,10 @@ interface AuthApi {
 
     @POST("auth/create-user")
     suspend fun registerWithOtp(@Body userRequestModel: UserRequestModel): Response<BaseModel<UserAuthResponseModel>>
+
+    @POST("auth/forgot-password")
+    suspend fun forgotPassword(@Body userRequestModel: UserRequestModel): Response<BaseModel<UserAuthResponseModel>>
+
+    @POST("auth/reset-password")
+    suspend fun resetPassword(@Body userRequestModel: UserRequestModel):Response<BaseModel<UserAuthResponseModel>>
 }

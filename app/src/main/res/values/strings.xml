@@ -19,7 +19,7 @@
     <string name="verify_code">Verify Code</string>
     <string name="please_enter_the_code_we_just_sent_to_your">Please enter the code we just sent to your</string>
     <string name="didn_t_receive_otp">Didn’t receive OTP</string>
-    <string name="re_enter_password">Re Enter Password</string>
+    <string name="re_enter_password">Re enter Password</string>
     <string name="password">Password</string>
     <string name="forgot_password_Q">Forgot Password ?</string>
     <string name="forgot_password">Forgot Password</string>
@@ -69,7 +69,18 @@
     <string name="please_enter_valid_email">Please enter a valid email</string>
     <string name="please_accept_terms_and_conditions">Please accept the terms and conditions</string>
     <string name="please_enter_mobile_number_or_email">Please enter mobile number or email</string>
-    <string name="pleases_dont">"pleases dont "</string>
+    <string name="please_enter_a_valid_password">please enter a valid password</string>
+    <string name="password_does_not_match">Password Does not match</string>
+    <string name="please_enter_a_valid_input">please enter a valid input</string>
 
+
+    <string name="error">Error !!</string>
+    <string name="invalid">Invalid !!</string>
+    <string name="success">Success !!</string>
+    <string name="otp_must_be_6_digits">Otp must be 6 digits</string>
+    <string name="menu">menu</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
 
 </resources>

@@ -18,4 +18,8 @@ interface AuthRepository : IRepository {
     suspend fun verifyOtp(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
 
     suspend fun registerWithOtp(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
+
+    suspend fun forgotPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
+
+    suspend fun resetPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
 }

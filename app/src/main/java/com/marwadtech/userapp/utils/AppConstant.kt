@@ -16,3 +16,27 @@ object OtpType{
     const val verifyPhone = "verify-phone"
     const val verifyEmail = "verify-email"
 }
+
+object ToastType {
+    const val isError = 1
+    const val removed = 2
+    const val success = 3
+    const val invalid = 4
+}
+
+object DateFormat {
+    const val MMM_YYYY = "MMM yyyy"
+    const val DD_MMM = "dd MMM"
+    const val DD_MMM_YYYY = "dd MMM yyyy"
+    const val D_MMM_YYYY = "d MMM yyyy"
+    const val D_MMMM_YYYY = "d MMMM yyyy"
+    const val EEE_DD_MMM_YYYY = "EEE, dd MMM yy"
+    const val YYYY_MM_DD = "yyyy-MM-dd"
+    const val YYYY_M_D = "yyyy-M-d"
+    const val DD_MM_YYYY = "dd-MM-yyyy"
+    const val DD_MM_YY = "dd/MM/yy"
+    const val DATE_Z = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    const val DD_MMM_YYYY_HH_MM_SS = "dd MMM yyyy | HH:mm aa"
+    const val YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss"
+    const val EEE_MMM_DD_HH_MM_SS_ZZZ_YYYY = "EEE MMM dd HH:mm:ss zzz yyyy"
+}

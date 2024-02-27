@@ -2,6 +2,8 @@ package com.marwadtech.userapp.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,7 +27,9 @@ import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
 import com.marwadtech.userapp.ui.user.UserDashboardActivity
+import com.marwadtech.userapp.utils.CustomToast
 import com.marwadtech.userapp.utils.GoogleLoginKeys
+import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.getValue
 import com.marwadtech.userapp.utils.isEmpty
 import com.marwadtech.userapp.utils.mobileNumberValidation
@@ -87,6 +91,28 @@ class LoginFragment : BaseFragment() {
                 binding.edtPassword.setSelection(binding.edtPassword.text.length)
             }
         }
+    }
+
+    private fun onTextChangedListener() {
+        binding.btnLogin.isEnabled = false
+        binding.edtMobileNumber.addTextChangedListener(createTextWatcher())
+        binding.edtMobileNumber.addTextChangedListener(createTextWatcher())
+    }
+
+    private fun createTextWatcher(): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                updateButtonState()
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        }
+    }
+
+    private fun updateButtonState() {
+        binding.btnLogin.isEnabled =
+            binding.edtMobileNumber.mobileNumberValidation() && binding.edtPassword.passwordValidation()
     }
 
 
@@ -211,10 +237,18 @@ class LoginFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }
@@ -247,10 +281,18 @@ class LoginFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }
