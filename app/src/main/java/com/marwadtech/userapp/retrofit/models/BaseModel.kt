@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 class BaseModel<T>(
     @SerializedName("success") val success: Boolean = true,
-    @SerializedName("status_code") val statusCode: Int = STATUS_IDLE,
+    @SerializedName("code") val statusCode: Int = STATUS_IDLE,
     @SerializedName("message") val message: String? = null,
     @SerializedName("data") val data: T? = null,
     @SerializedName("errors") val errors: ArrayList<Error>? = null

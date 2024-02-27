@@ -18,3 +18,4 @@ data class Error(
     val key: String,
     val message: String
 )
+

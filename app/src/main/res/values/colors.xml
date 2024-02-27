@@ -29,15 +29,33 @@
     <color name="light_purple_20">#337E57C2</color>
 
 
+
+    <color name="light_grey">#F6F6F6</color>
+    <color name="dark_mango">#D85D17</color>
+    <color name="new_red">#CC1F07</color>
+    <color name="grey_81">#818181</color>
+    <color name="grey_66">#666666</color>
+    <color name="grey_D1">#FFD1D1D1</color>
+    <color name="grey_DD">#DDDDDD</color>
+    <color name="grey_99">#999898</color>
+    <color name="grey_999">#999999</color>
+    <color name="grey_D9">#d9d9d9</color>
+    <color name="grey_6b">#6b6b6b</color>
+    <color name="grey_6B">#6B6B6B</color>
+    <color name="white_EE">#eeeeee</color>
+    <color name="green_light">#4CAF50</color>
+    <color name="black_22">#222222</color>
+    <color name="black_26">#262626</color>
+
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlue">#3758C9</color>
     <color name="colorGreen">#689F39</color>
     <color name="whiteLight">#F1FFE9</color>
 
-    <color name="colorPrimary">#689F39</color>
+    <color name="colorPrimary">#007BFF</color>
     <color name="colorMidPrimary">#31650F</color>
     <color name="colorEndPrimary">#204309</color>
-    <color name="colorPrimaryDark">#204309</color>
+    <color name="colorPrimaryDark">#2D56B3</color>
     <color name="colorAccent">#204309</color>
     <color name="darkGray">#343434</color>
 
@@ -280,6 +298,10 @@
     <color name="light_green_A200">#B2FF59</color>
     <color name="light_green_A400">#76FF03</color>
     <color name="light_green_A700">#64DD17</color>
+    <color name="rating_green">#33D00B</color>
+    <color name="dark_spring_green">#0E8345</color>
+    <color name="pinkish_red">#DE1135</color>
+    <color name="reddish_orange">#F0742E</color>
 
     <color name="amber_50">#FFF8E1</color>
     <color name="amber_100">#FFECB3</color>
@@ -531,5 +553,8 @@
     <color name="blue">#3392FF</color>
     <color name="warning">#F1CA53</color>
     <color name="colorSpaceLightGray">#F8F8F9</color>
+    <color name="grey_4d">#4D4D4D</color>
+    <color name="grey_d0">#D0D5DD</color>
+    <color name="grey_e6">#E6E6E6</color>
 
 </resources>

@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("com.google.firebase.crashlytics")
     id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
     id("androidx.navigation.safeargs.kotlin")
@@ -92,6 +93,8 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
     val nav_version = "2.7.4"
 
     implementation("androidx.core:core-ktx:1.12.0")

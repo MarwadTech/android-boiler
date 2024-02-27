@@ -16,29 +16,60 @@
     <string name="sign_up">Sign Up</string>
     <string name="welcome_to_join_finder_community">Welcome to join Finder Community</string>
     <string name="mobile_number">Mobile Number</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="please_enter_the_code_we_just_sent_to_your">Please enter the code we just sent to your</string>
+    <string name="didn_t_receive_otp">Didn’t receive OTP</string>
+    <string name="re_enter_password">Re Enter Password</string>
     <string name="password">Password</string>
     <string name="forgot_password_Q">Forgot Password ?</string>
     <string name="forgot_password">Forgot Password</string>
-    <string name="not_have_an_account">Don\'t have an account?</string>
+    <string name="not_have_an_account">Don\'t have an account? <b><u><font color="#6a1b9a">Sign Up</font></u></b></string>
     <string name="create_account">Create Account</string>
     <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
-    <string name="already_have_an_account">Already have an account?</string>
+    <string name="already_have_an_account">Already have an account? <b><u><font color="#6a1b9a">Login</font></u></b></string>
     <string name="login_here">Login here</string>
     <string name="submit">Submit</string>
     <string name="verification_is_successfully">Verification is Successfully</string>
-    <string name="resend_otp_timer">Resend OTP : %s 00 : 30 sec</string>
+    <string name="resend_otp_timer">Resend OTP : %s sec</string>
     <string name="resend_otp">Resend OTP</string>
     <string name="enter_otp_to_verify">Enter OTP to Verify</string>
     <string name="verification">Verification</string>
     <string name="name">Name</string>
     <string name="remember_me">Remember Me</string>
     <string name="verify">Verify</string>
-    <string name="conform_password">Conform Password</string>
     <string name="new_password">New Password</string>
     <string name="back_to_login"> <u> Back To Login </u> </string>
-    <string name="conform">Conform</string>
+    <string name="confirm">Confirm</string>
+    <string name="conform">Confirm</string>
     <string name="finder_description">Discover local servicemen for various services with Finder, your go-to application. Get the best service providers at your fingertips!</string>
     <string name="next">Next</string>
     <string name="select_language">Select language</string>
     <string name="password_change_successfully">Password Change Successfully!</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="get_code">GET CODE</string>
+    <string name="phone_number">Phone number</string>
+    <string name="or_sign_up_using">or Sign Up using</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="facing_problems_having_questions">Facing Problems Having Questions</string>
+    <string name="email">Email</string>
+    <string name="terms_conditions_blue"><b><u><font color="#725ba5">terms and conditions.</font></u></b></string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="phone_number_email">phone number/Email</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <!--Boiler plate validation-->
+
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="please_enter_mobile_number">Please enter a mobile number</string>
+    <string name="please_enter_valid_mobile_number">Please enter a valid mobile number</string>
+    <string name="please_enter_password">Please enter a password</string>
+    <string name="please_enter_valid_password">Please enter a valid password</string>
+    <string name="please_enter_email">Please enter an email</string>
+    <string name="please_enter_valid_email">Please enter a valid email</string>
+    <string name="please_accept_terms_and_conditions">Please accept the terms and conditions</string>
+    <string name="please_enter_mobile_number_or_email">Please enter mobile number or email</string>
+    <string name="pleases_dont">"pleases dont "</string>
+
+
 </resources>

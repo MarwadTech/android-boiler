@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CardView"
+    android:id="@+id/customToast"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_33"
+    app:cardCornerRadius="@dimen/dimen_12">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lytToast"
+        android:background="@color/dark_spring_green"
+        android:paddingVertical="@dimen/dimen_10">
+
+        <ImageView
+            android:id="@+id/imgMassageType"
+            android:layout_width="@dimen/dimen_33"
+            android:layout_height="@dimen/dimen_33"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:elevation="@dimen/dimen_5"
+            android:src="@drawable/ic_circle_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtToastTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:maxWidth="@dimen/dimen_200"
+            android:id="@+id/txtToastTitle"
+            style="@style/materialText_medium_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="Welcome  🎊  wertyuiofghj"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/txtToastDescription"
+            app:layout_constraintEnd_toStartOf="@id/imgCancel"
+            app:layout_constraintStart_toEndOf="@+id/imgMassageType"
+            app:layout_constraintTop_toTopOf="@+id/imgMassageType" />
+
+
+        <TextView
+            android:maxWidth="@dimen/dimen_270"
+            android:id="@+id/txtToastDescription"
+            style="@style/materialText_regular_12"
+            android:textSize="@dimen/_11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:maxLines="2"
+            android:visibility="visible"
+            android:text="sdjhf safhafbl las fsjasuc askj egsgs chsavbj shgs afsv"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/imgMassageType"
+            app:layout_constraintEnd_toStartOf="@id/imgCancel"
+            app:layout_constraintStart_toStartOf="@id/txtToastTitle"
+            app:layout_constraintTop_toBottomOf="@id/txtToastTitle" />
+
+
+        <ImageView
+            android:id="@id/imgCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_cross_white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtToastTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
