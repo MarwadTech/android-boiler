@@ -109,7 +109,6 @@
                 app:hideLineWhenFilled="false"
                 app:itemCount="6"
                 android:fontFamily="@font/poppins_medium"
-                android:hint="000000"
                 android:textColorHint="@color/grey_d0"
                 app:itemHeight="@dimen/dimen_55"
                 app:itemRadius="@dimen/dimen_8"

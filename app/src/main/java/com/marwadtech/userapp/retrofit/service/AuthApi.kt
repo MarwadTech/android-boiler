@@ -11,6 +11,9 @@ interface AuthApi {
     @POST("auth/login")
     suspend fun login(@Body userRequestModel: UserRequestModel): Response<BaseModel<UserAuthResponseModel>>
 
+    @POST("auth/login/google")
+    suspend fun loginWithGoogle(@Body userRequestModel: UserRequestModel): Response<BaseModel<UserAuthResponseModel>>
+
     @POST("auth/check-user")
     suspend fun checkUser(@Body userRequestModel: UserRequestModel): Response<BaseModel<UserAuthResponseModel>>
 

@@ -16,6 +16,10 @@ class AuthRepositoryImpl @Inject constructor(
         return handleResponse(handleRequest(app){authApi.login(userRequestModel)})
     }
 
+    override suspend fun loginWithGoogle(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel> {
+        return handleResponse(handleRequest(app){authApi.loginWithGoogle(userRequestModel)})
+    }
+
     override suspend fun checkUser(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel> {
        return handleResponse(handleRequest(app){authApi.checkUser(userRequestModel)})
     }

@@ -2,13 +2,12 @@ package com.marwadtech.userapp.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -22,19 +21,18 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.base.BaseFragment
 import com.marwadtech.userapp.databinding.FragmentLoginBinding
-import com.marwadtech.userapp.dialogs.OtpVerificationDialog
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
 import com.marwadtech.userapp.ui.user.UserDashboardActivity
-import com.marwadtech.userapp.utils.FilePathUtils.Companion.showToast
+import com.marwadtech.userapp.utils.GoogleLoginKeys
 import com.marwadtech.userapp.utils.getValue
 import com.marwadtech.userapp.utils.isEmpty
 import com.marwadtech.userapp.utils.mobileNumberValidation
 import com.marwadtech.userapp.utils.passwordValidation
 import com.marwadtech.userapp.utils.setSingleClickListener
-import com.onesignal.OneSignal
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment() {
@@ -46,11 +44,11 @@ class LoginFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("your_web_client_id")
+            .requestIdToken(GoogleLoginKeys.WebClientKey)
             .requestEmail()
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
+        googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
     }
 
@@ -67,6 +65,10 @@ class LoginFragment : BaseFragment() {
         viewModel.login.observe(
             viewLifecycleOwner,
             this::handleLoginResult
+        )
+        viewModel.loginWithGoogle.observe(
+            viewLifecycleOwner,
+            this::handleLoginWithGoogleResult
         )
         setClickListener()
         setEyeToggle()
@@ -91,7 +93,7 @@ class LoginFragment : BaseFragment() {
     private fun setClickListener() {
 
         binding.btnLogin.setSingleClickListener {
-            if (validation()){
+            if (validation()) {
                 viewModel.login(
                     UserRequestModel(
                         phoneNumber = binding.edtMobileNumber.getValue(),
@@ -101,16 +103,16 @@ class LoginFragment : BaseFragment() {
             }
         }
 
-        binding.imgGoogle.setSingleClickListener{
+        binding.imgGoogle.setSingleClickListener {
             loginWithGoogle()
         }
 
-        binding.txtCreateAccount.setOnClickListener(){
+        binding.txtCreateAccount.setOnClickListener() {
             val directions = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
             findNavController().navigate(directions)
         }
 
-        binding.txtForgot.setOnClickListener(){
+        binding.txtForgot.setOnClickListener() {
             val directions = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
             findNavController().navigate(directions)
         }
@@ -123,48 +125,64 @@ class LoginFragment : BaseFragment() {
                 binding.edtMobileNumber.error = getString(R.string.please_enter_mobile_number)
                 false
             }
+
             !binding.edtMobileNumber.mobileNumberValidation() -> {
                 binding.edtMobileNumber.error = getString(R.string.please_enter_valid_mobile_number)
                 false
             }
+
             binding.edtPassword.isEmpty() -> {
                 binding.edtPassword.error = getString(R.string.please_enter_password)
                 false
             }
+
             !binding.edtPassword.passwordValidation() -> {
                 binding.edtPassword.error = getString(R.string.please_enter_valid_password)
                 false
             }
+
             else -> true
         }
     }
 
-    private fun loginWithGoogle(){
+    private fun loginWithGoogle() {
+        val signedInAccount = GoogleSignIn.getLastSignedInAccount(requireContext())
+        if (signedInAccount != null) {
+            googleSignInClient.signOut().addOnCompleteListener {
+                val signInIntent = googleSignInClient.signInIntent
+                startActivityForResult(signInIntent, GoogleLoginKeys.RequestCode)
+            }
+        } else {
             val signInIntent = googleSignInClient.signInIntent
-            startActivityForResult(signInIntent, 264) // Replace RC_SIGN_IN with a unique request code
+            startActivityForResult(signInIntent, GoogleLoginKeys.RequestCode)
+        }
     }
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 264) {
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-                handleSignedInUser(account)
-            } catch (e: ApiException) {
-                e.printStackTrace()
-            }
+        if (requestCode == GoogleLoginKeys.RequestCode) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
         }
     }
-    private fun handleSignedInUser(account: GoogleSignInAccount) {
-        val idToken = account.idToken
-        val email = account.email
-        val name = account.displayName
-        Log.e(TAG, "handleSignedInUser: $account", )
-    }
 
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account: GoogleSignInAccount = completedTask.getResult(ApiException::class.java)
+            Log.e(TAG, "handleSignInResult: ${account.email}")
+            Log.e(TAG, "handleSignInResult: ${account.displayName}")
+            Log.e(TAG, "handleSignInResult: ${account.idToken}")
+            viewModel.loginWithGoogle(
+                UserRequestModel(
+                    googleIdToken = account.idToken
+                )
+            )
+        } catch (e: ApiException) {
+            Log.w(TAG, "signInResult:failed code=" + e.statusCode)
+        }
+    }
 
     private fun handleLoginResult(result: BaseModel<UserAuthResponseModel>) {
         when {
@@ -181,7 +199,6 @@ class LoginFragment : BaseFragment() {
                         spUtils.accessToken = this.token
                         spUtils.user = this.user
                         spUtils.isLoggedIn = true
-                        OneSignal.login(this.user.id ?: "")
                         goToDashboard()
                     }
                 }
@@ -193,8 +210,48 @@ class LoginFragment : BaseFragment() {
                 )
                 hideProgressbar()
                 result.errors?.apply {
-                    this.map {}
-                } ?: run {}
+                    this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun handleLoginWithGoogleResult(result: BaseModel<UserAuthResponseModel>) {
+        when {
+            result.isLoading() -> {
+                Log.e(TAG, "handleLoginWithGoogleResult: isLoading")
+                showProgressbar()
+            }
+
+            result.isSuccessfully() -> {
+                Log.e(TAG, "handleLoginWithGoogleResult: isSuccessfully")
+                hideProgressbar()
+                result.data?.apply {
+                    if (this.user != null && this.token != null) {
+                        spUtils.accessToken = this.token
+                        spUtils.user = this.user
+                        spUtils.isLoggedIn = true
+                        goToDashboard()
+                    }
+                }
+            }
+
+            result.isError() -> {
+                Log.e(
+                    TAG, "handleLoginWithGoogleResult: isError ${result.message} ${result.errors}"
+                )
+                hideProgressbar()
+                result.errors?.apply {
+                    this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

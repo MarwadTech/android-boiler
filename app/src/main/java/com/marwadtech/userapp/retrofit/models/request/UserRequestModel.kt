@@ -31,5 +31,11 @@ data class UserRequestModel (
 
     @SerializedName("otp")
     @Expose
-    var otp: String? = null
+    var otp: String? = null,
+
+    @SerializedName("google_id_token")
+    @Expose
+    var googleIdToken: String? = null,
+
+
 ):Serializable

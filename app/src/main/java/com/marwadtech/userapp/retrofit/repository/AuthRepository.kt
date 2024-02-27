@@ -10,6 +10,7 @@ import retrofit2.http.Body
 interface AuthRepository : IRepository {
 
     suspend fun login(userRequestModel: UserRequestModel):BaseModel<UserAuthResponseModel>
+    suspend fun loginWithGoogle(userRequestModel: UserRequestModel):BaseModel<UserAuthResponseModel>
     suspend fun checkUser(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
 
     suspend fun sendOtp(userRequestModel: UserRequestModel):BaseModel<UserAuthResponseModel>

@@ -29,6 +29,18 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    private val _loginWithGoogle = MutableLiveData<BaseModel<UserAuthResponseModel>>()
+    val loginWithGoogle : LiveData<BaseModel<UserAuthResponseModel>>
+        get() = _loginWithGoogle
+
+    fun loginWithGoogle(userRequestModel: UserRequestModel) {
+        viewModelScope.launch {
+            _loginWithGoogle.value = BaseModel.loading()
+            _loginWithGoogle.value = authRepository.loginWithGoogle(userRequestModel)
+            _loginWithGoogle.value = BaseModel.clear()
+        }
+    }
+
     private val _checkUser = MutableLiveData<BaseModel<UserAuthResponseModel>>()
     val checkUser: LiveData<BaseModel<UserAuthResponseModel>>
         get() = _checkUser

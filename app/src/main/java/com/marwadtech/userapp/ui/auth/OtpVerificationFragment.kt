@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -171,8 +172,12 @@ class OtpVerificationFragment : BaseFragment() {
                 )
                 hideProgressbar()
                 result.errors?.apply {
-                    this.map {}
-                } ?: run {}
+                    this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -187,16 +192,12 @@ class OtpVerificationFragment : BaseFragment() {
             result.isSuccessfully() -> {
                 Log.e(TAG, "handleVerifyOtpResult: isSuccessfully")
                 hideProgressbar()
-                result.data?.apply {
+                result.data.apply {
                     if (args.isFromRegister) {
                         if (otpVerificationType == OtpType.verifyPhone) {
                             binding.txtMobileNumber.text = getString(R.string.email)
                             binding.btnResentOtp.gone()
-                            viewModel.sendOtp(
-                                UserRequestModel(
-                                    email = args.userData?.email
-                                )
-                            )
+                            binding.edtOTP.text = null
                             otpVerificationType = OtpType.verifyEmail
                             startTimer()
                         } else if (otpVerificationType == OtpType.verifyEmail) {
@@ -225,8 +226,12 @@ class OtpVerificationFragment : BaseFragment() {
                 )
                 hideProgressbar()
                 result.errors?.apply {
-                    this.map {}
-                } ?: run {}
+                    this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -245,7 +250,6 @@ class OtpVerificationFragment : BaseFragment() {
                         spUtils.accessToken = this.token
                         spUtils.user = this.user
                         spUtils.isLoggedIn = true
-                        OneSignal.login(this.user.id ?: "")
                         goToDashboard()
                     }
                 }
@@ -257,8 +261,12 @@ class OtpVerificationFragment : BaseFragment() {
                 )
                 hideProgressbar()
                 result.errors?.apply {
-                    this.map {}
-                } ?: run {}
+                    this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.marwadtech.userapp.R
@@ -44,10 +45,6 @@ class RegistrationFragment : BaseFragment() {
         viewModel.checkUser.observe(
             viewLifecycleOwner,
             this::handleCheckUserResult
-        )
-        viewModel.sendOtp.observe(
-            viewLifecycleOwner,
-            this::handleSendOtpResult
         )
         setClickListener()
         setEyeToggle()
@@ -139,11 +136,7 @@ class RegistrationFragment : BaseFragment() {
                 hideProgressbar()
                 result.data?.apply {
                     if (this.nextRoute == NextRoute.verifyOtp){
-                        viewModel.sendOtp(
-                            UserRequestModel(
-                                phoneNumber = binding.edtMobileNumber.getValue()
-                            )
-                        )
+                        navigationOtpVerification()
                     }
                 }
             }
@@ -156,40 +149,10 @@ class RegistrationFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                 } ?: run {
-                }
-            }
-        }
-    }
-
-    private fun handleSendOtpResult(result: BaseModel<UserAuthResponseModel>) {
-        when {
-            result.isLoading() -> {
-                Log.e(TAG, "handleSendOtpResult: isLoading")
-                showProgressbar()
-            }
-
-            result.isSuccessfully() -> {
-                Log.e(TAG, "handleSendOtpResult: isSuccessfully")
-                hideProgressbar()
-                result.data?.apply {
-                    if (this.nextRoute == NextRoute.verifyOtp){
-                        navigationOtpVerification()
-                    }
-                }
-            }
-
-            result.isError() -> {
-                Log.e(
-                    TAG,
-                    "handleSendOtpResult: isError ${result.message} ${result.errors}"
-                )
-                hideProgressbar()
-                result.errors?.apply {
-                    this.map {
-                    }
-                } ?: run {
+                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
