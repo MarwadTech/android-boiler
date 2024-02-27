@@ -37,9 +37,9 @@
     <string name="name">Name</string>
     <string name="remember_me">Remember Me</string>
     <string name="verify">Verify</string>
-    <string name="conform_password">Conform Password</string>
     <string name="new_password">New Password</string>
     <string name="back_to_login"> <u> Back To Login </u> </string>
+    <string name="confirm">Confirm</string>
     <string name="conform">Confirm</string>
     <string name="finder_description">Discover local servicemen for various services with Finder, your go-to application. Get the best service providers at your fingertips!</string>
     <string name="next">Next</string>
