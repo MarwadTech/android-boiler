@@ -60,10 +60,8 @@ fun formatAndSetClickableText(
         val trimmedText = description.substring(0, maxWords).lines().take(maxLines)
             .joinToString("\n")
         val moreLink = " ...more"
-        val clickableSpan = object : ClickableSpan() {
-            override fun onClick(widget: View) {
-                listener()
-            }
+        val clickableSpan = SafeClickableSpan {
+            listener()
         }
         val spannable = SpannableStringBuilder(trimmedText + moreLink)
         spannable.setSpan(
