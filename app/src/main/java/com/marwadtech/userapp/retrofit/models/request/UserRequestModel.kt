@@ -37,5 +37,13 @@ data class UserRequestModel (
     @Expose
     var googleIdToken: String? = null,
 
+    @SerializedName("new_password")
+    @Expose
+    var newPassword: String? = null,
+
+    @SerializedName("confirm_new_password")
+    @Expose
+    var confirmNewPassword: String? = null,
+
 
 ):Serializable

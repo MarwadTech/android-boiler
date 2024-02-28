@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -17,8 +16,9 @@ import com.marwadtech.userapp.databinding.FragmentOtpVerificationBinding
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
-import com.marwadtech.userapp.ui.user.UserDashboardActivity
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.utils.OtpType
+import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.getValue
 import com.marwadtech.userapp.utils.gone
 import com.marwadtech.userapp.utils.invisible
@@ -26,7 +26,6 @@ import com.marwadtech.userapp.utils.isEmpty
 import com.marwadtech.userapp.utils.isOtp
 import com.marwadtech.userapp.utils.setSingleClickListener
 import com.marwadtech.userapp.utils.visible
-import com.onesignal.OneSignal
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -141,7 +140,7 @@ class OtpVerificationFragment : BaseFragment() {
             }
 
             !binding.edtOTP.isOtp() -> {
-                binding.edtOTP.error = "Otp must be 6 digits"
+                binding.edtOTP.error = getString(R.string.otp_must_be_6_digits)
                 false
             }
 
@@ -173,10 +172,18 @@ class OtpVerificationFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }
@@ -214,7 +221,14 @@ class OtpVerificationFragment : BaseFragment() {
                         }
                     } else {
                         val directions =
-                            OtpVerificationFragmentDirections.actionOtpVerificationFragmentToResetPasswordFragment()
+                            OtpVerificationFragmentDirections.actionOtpVerificationFragmentToResetPasswordFragment(
+                                userData =  UserRequestModel(
+                                    phoneNumber = args.userData?.phoneNumber,
+                                    email = args.userData?.email,
+                                    otp = if (args.otpType == OtpType.verifyPhone){phoneOtp}else{emailOtp}
+                                ),
+                                otpType = args.otpType
+                            )
                         findNavController().navigate(directions)
                     }
                 }
@@ -227,10 +241,18 @@ class OtpVerificationFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }
@@ -262,10 +284,18 @@ class OtpVerificationFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }

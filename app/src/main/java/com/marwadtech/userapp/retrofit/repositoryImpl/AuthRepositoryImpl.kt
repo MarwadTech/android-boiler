@@ -35,4 +35,12 @@ class AuthRepositoryImpl @Inject constructor(
         return handleResponse(handleRequest(app){authApi.registerWithOtp(userRequestModel)})
     }
 
+    override suspend fun forgotPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel> {
+        return handleResponse(handleRequest(app){authApi.forgotPassword(userRequestModel)})
+    }
+
+    override suspend fun resetPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel> {
+        return handleResponse(handleRequest(app){authApi.resetPassword(userRequestModel)})
+    }
+
 }

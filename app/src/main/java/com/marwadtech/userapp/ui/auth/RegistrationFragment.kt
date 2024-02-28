@@ -18,6 +18,7 @@ import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
 import com.marwadtech.userapp.utils.NextRoute
 import com.marwadtech.userapp.utils.OtpType
+import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.emailValidation
 import com.marwadtech.userapp.utils.getValue
 import com.marwadtech.userapp.utils.isEmpty
@@ -149,10 +150,18 @@ class RegistrationFragment : BaseFragment() {
                 hideProgressbar()
                 result.errors?.apply {
                     this.map {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        customToast.setCustomView(
+                            getString(R.string.error),
+                            it.message,
+                            ToastType.isError
+                        )
                     }
                 } ?: run {
-                    Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
+                    customToast.setCustomView(
+                        getString(R.string.error),
+                        result.message,
+                        ToastType.isError
+                    )
                 }
             }
         }

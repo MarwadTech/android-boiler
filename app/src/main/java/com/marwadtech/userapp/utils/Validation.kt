@@ -18,7 +18,6 @@ fun EditText.emailValidation(): Boolean {
     val emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}".toRegex()
     return this.text.isNotEmpty() && this.text.matches(emailPattern)
 }
-
 fun EditText.isOtp(): Boolean {
     return this.text.trim().length == 6
 }

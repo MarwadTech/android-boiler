@@ -11,12 +11,14 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCa
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.dialogs.ProgressDialog
+import com.marwadtech.userapp.utils.CustomToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 abstract class BaseDialogFragment :
     BottomSheetDialogFragment() {
 
+    lateinit var customToast: CustomToast
     lateinit var loader: ProgressDialog
 
     override fun onAttach(context: Context) {
@@ -30,6 +32,7 @@ abstract class BaseDialogFragment :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loader = ProgressDialog(requireActivity())
+        customToast = CustomToast(requireActivity())
     }
 
 //    @Inject

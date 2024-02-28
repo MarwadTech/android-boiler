@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val authRepository: AuthRepository
-):ViewModel() {
+) : ViewModel() {
 
     private val _login = MutableLiveData<BaseModel<UserAuthResponseModel>>()
     val login: LiveData<BaseModel<UserAuthResponseModel>>
@@ -30,7 +30,7 @@ class AuthViewModel @Inject constructor(
     }
 
     private val _loginWithGoogle = MutableLiveData<BaseModel<UserAuthResponseModel>>()
-    val loginWithGoogle : LiveData<BaseModel<UserAuthResponseModel>>
+    val loginWithGoogle: LiveData<BaseModel<UserAuthResponseModel>>
         get() = _loginWithGoogle
 
     fun loginWithGoogle(userRequestModel: UserRequestModel) {
@@ -66,7 +66,7 @@ class AuthViewModel @Inject constructor(
     }
 
     private val _verifyOtp = MutableLiveData<BaseModel<UserAuthResponseModel>>()
-    val verifyOtp : LiveData<BaseModel<UserAuthResponseModel>>
+    val verifyOtp: LiveData<BaseModel<UserAuthResponseModel>>
         get() = _verifyOtp
 
     fun verifyOtp(userRequestModel: UserRequestModel) {
@@ -78,7 +78,7 @@ class AuthViewModel @Inject constructor(
     }
 
     private val _registerWithOtp = MutableLiveData<BaseModel<UserAuthResponseModel>>()
-    val registerWithOtp : LiveData<BaseModel<UserAuthResponseModel>>
+    val registerWithOtp: LiveData<BaseModel<UserAuthResponseModel>>
         get() = _registerWithOtp
 
     fun registerWithOtp(userRequestModel: UserRequestModel) {
@@ -86,6 +86,30 @@ class AuthViewModel @Inject constructor(
             _registerWithOtp.value = BaseModel.loading()
             _registerWithOtp.value = authRepository.registerWithOtp(userRequestModel)
             _registerWithOtp.value = BaseModel.clear()
+        }
+    }
+
+    private val _forgotPassword = MutableLiveData<BaseModel<UserAuthResponseModel>>()
+    val forgotPassword: LiveData<BaseModel<UserAuthResponseModel>>
+        get() = _forgotPassword
+
+    fun forgotPassword(userRequestModel: UserRequestModel) {
+        viewModelScope.launch {
+            _forgotPassword.value = BaseModel.loading()
+            _forgotPassword.value = authRepository.forgotPassword(userRequestModel)
+            _forgotPassword.value = BaseModel.clear()
+        }
+    }
+
+    private val _resetPassword = MutableLiveData<BaseModel<UserAuthResponseModel>>()
+    val resetPassword: LiveData<BaseModel<UserAuthResponseModel>>
+        get() = _resetPassword
+
+    fun resetPassword(userRequestModel: UserRequestModel) {
+        viewModelScope.launch {
+            _resetPassword.value = BaseModel.loading()
+            _resetPassword.value = authRepository.resetPassword(userRequestModel)
+            _resetPassword.value = BaseModel.clear()
         }
     }
 
