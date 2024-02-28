@@ -6,11 +6,11 @@
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
     <item
-        android:id="@+id/navigation_notification"
+        android:id="@+id/navigate_notification"
         android:icon="@drawable/ic_notification"
         android:title="@string/notification" />
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigate_profile"
         android:icon="@drawable/ic_user"
         android:title="@string/profile" />
 </menu>

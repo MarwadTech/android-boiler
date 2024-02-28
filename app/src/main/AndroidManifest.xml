@@ -34,7 +34,15 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false" />
         <activity
-            android:name=".ui.user.UserDashboardActivity"
+            android:name=".ui.bottomNavigation.UserDashboardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false" />
+        <activity
+            android:name=".ui.navigationDrawer.NavigationDrawerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false" />
+        <activity
+            android:name=".ui.bottomNavigationDrawer.BottomNavigationDrawerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false" />
         <activity

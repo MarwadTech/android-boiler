@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -17,7 +16,7 @@ import com.marwadtech.userapp.databinding.FragmentOtpVerificationBinding
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
-import com.marwadtech.userapp.ui.user.UserDashboardActivity
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.utils.OtpType
 import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.getValue
@@ -27,7 +26,6 @@ import com.marwadtech.userapp.utils.isEmpty
 import com.marwadtech.userapp.utils.isOtp
 import com.marwadtech.userapp.utils.setSingleClickListener
 import com.marwadtech.userapp.utils.visible
-import com.onesignal.OneSignal
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

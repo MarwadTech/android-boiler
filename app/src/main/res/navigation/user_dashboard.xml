@@ -7,7 +7,17 @@
 
     <fragment
         android:id="@+id/navigate_home"
-        android:name="com.marwadtech.userapp.ui.user.DashboardFragment"
+        android:name="com.marwadtech.userapp.ui.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/navigate_profile"
+        android:name="com.marwadtech.userapp.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigate_notification"
+        android:name="com.marwadtech.userapp.ui.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

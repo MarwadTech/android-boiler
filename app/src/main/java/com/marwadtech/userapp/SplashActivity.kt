@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.marwadtech.userapp.databinding.ActivitySplashBinding
 import com.marwadtech.userapp.ui.auth.AuthActivity
-import com.marwadtech.userapp.ui.user.UserDashboardActivity
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.utils.SpUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay

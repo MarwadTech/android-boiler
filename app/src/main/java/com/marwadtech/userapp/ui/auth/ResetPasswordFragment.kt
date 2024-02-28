@@ -15,7 +15,7 @@ import com.marwadtech.userapp.databinding.FragmentResetPasswordBinding
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
-import com.marwadtech.userapp.ui.user.UserDashboardActivity
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.getValue
 import com.marwadtech.userapp.utils.isEmpty

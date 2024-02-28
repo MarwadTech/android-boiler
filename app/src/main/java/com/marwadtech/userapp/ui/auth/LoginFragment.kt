@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -26,8 +25,7 @@ import com.marwadtech.userapp.databinding.FragmentLoginBinding
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
-import com.marwadtech.userapp.ui.user.UserDashboardActivity
-import com.marwadtech.userapp.utils.CustomToast
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.utils.GoogleLoginKeys
 import com.marwadtech.userapp.utils.ToastType
 import com.marwadtech.userapp.utils.getValue
