@@ -61,10 +61,6 @@ class UserDashboardActivity : AppCompatActivity() {
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.toolbar_menu -> {
-                    val intent = Intent(this, BottomNavigationDrawerActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
                 }
             }
             return@setOnMenuItemClickListener true
