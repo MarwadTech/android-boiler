@@ -1,4 +1,4 @@
-package com.marwadtech.userapp.ui
+package com.marwadtech.userapp.ui.screens.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.marwadtech.userapp.R
-import com.marwadtech.userapp.databinding.FragmentDashboardBinding
-import com.marwadtech.userapp.databinding.FragmentProfileBinding
+import com.marwadtech.userapp.base.BaseFragment
+import com.marwadtech.userapp.databinding.FragmentCartBinding
+import com.marwadtech.userapp.databinding.FragmentEditProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentProfileBinding
+@AndroidEntryPoint
+class EditProfileFragment : BaseFragment() {
+    private lateinit var binding: FragmentEditProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,8 +21,8 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View{
-        binding = FragmentProfileBinding.inflate(inflater,container,false)
+    ): View {
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,6 +36,6 @@ class ProfileFragment : Fragment() {
     }
 
     companion object {
-       private var TAG = FragmentDashboardBinding::class.java.name
+        private val TAG = FragmentEditProfileBinding::class.java.name
     }
 }

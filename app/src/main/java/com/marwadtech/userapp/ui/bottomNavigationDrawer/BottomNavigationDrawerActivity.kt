@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 import com.marwadtech.userapp.R
+import com.marwadtech.userapp.base.BaseActivity
 import com.marwadtech.userapp.databinding.ActivityBottomNavigationDrawerBinding
 import com.marwadtech.userapp.databinding.ActivityNavigationDrawerBinding
 import com.marwadtech.userapp.ui.navigationDrawer.NavigationDrawerActivity
@@ -24,7 +25,7 @@ import com.marwadtech.userapp.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BottomNavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class BottomNavigationDrawerActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityBottomNavigationDrawerBinding
     private lateinit var navController: NavController

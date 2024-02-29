@@ -13,13 +13,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 import com.marwadtech.userapp.R
+import com.marwadtech.userapp.base.BaseActivity
 import com.marwadtech.userapp.databinding.ActivityNavigationDrawerBinding
 import com.marwadtech.userapp.utils.gone
 import com.marwadtech.userapp.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
+class NavigationDrawerActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener  {
 
     private lateinit var binding: ActivityNavigationDrawerBinding
     private lateinit var navController: NavController

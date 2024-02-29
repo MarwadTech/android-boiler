@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.marwadtech.userapp.R
+import com.marwadtech.userapp.base.BaseActivity
 import com.marwadtech.userapp.databinding.ActivityUserDashboardBinding
 import com.marwadtech.userapp.ui.bottomNavigationDrawer.BottomNavigationDrawerActivity
 import com.marwadtech.userapp.ui.navigationDrawer.NavigationDrawerActivity
@@ -18,7 +19,7 @@ import com.marwadtech.userapp.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class UserDashboardActivity : AppCompatActivity() {
+class UserDashboardActivity : BaseActivity() {
 
     private lateinit var binding: ActivityUserDashboardBinding
     private lateinit var navController: NavController
