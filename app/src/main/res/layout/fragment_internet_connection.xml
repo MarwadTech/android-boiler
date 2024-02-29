@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="internet.InternetConnectionFragment">
+
+        <ImageView
+            android:id="@+id/imgNoInternetConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_internet_connection"
+            app:layout_constraintBottom_toTopOf="@+id/txtCheckInternetConnection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/txtCheckInternetConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:text="@string/check_internet_connection"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintBottom_toTopOf="@+id/txtInternetDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgNoInternetConnection" />
+
+        <TextView
+            android:id="@+id/txtInternetDescription"
+            android:layout_width="@dimen/dimen_0"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:text="@string/internet_description"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnReload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCheckInternetConnection" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReload"
+            style="@style/materialButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/reload"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInternetDescription" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

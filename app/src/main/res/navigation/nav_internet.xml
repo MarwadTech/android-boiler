@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navGraphInternet"
+    app:startDestination="@+id/internetConnectionFragment">
+
+
+    <fragment
+        android:id="@+id/internetConnectionFragment"
+        android:name="com.marwadtech.userapp.internet.InternetConnectionFragment"
+        android:label="InternetConnectionFragment"
+        tools:layout="@layout/fragment_internet_connection"/>
+</navigation>

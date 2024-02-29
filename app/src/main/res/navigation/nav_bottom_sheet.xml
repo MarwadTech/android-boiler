@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedBottomDialogFragment"
+    app:startDestination="@id/bottomDialogFragment">
+
+    <dialog
+        android:id="@+id/bottomDialogFragment"
+        android:name="com.marwadtech.userapp.common.BottomDialogFragment"
+        android:label="fragment_bottom_dialog"
+        tools:layout="@layout/fragment_bottom_dialog">
+        <argument
+            app:argType="string"
+            android:name="title"
+            app:nullable="true"/>
+        <argument
+            app:argType="string"
+            android:name="description"
+            app:nullable="true"
+            android:defaultValue=""/>
+        <argument
+            app:argType="integer"
+            android:name="requestKey"
+            app:nullable="false"/>
+
+    </dialog>
+</navigation>

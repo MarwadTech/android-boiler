@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_dashboard"
     app:startDestination="@id/navigate_home">
-
+    <action
+        android:id="@+id/action_global_imageSelectionFragment"
+        app:destination="@id/navGraphImageSelection"/>
+    <action
+        android:id="@+id/action_global_navGraphInternet"
+        app:destination="@id/navGraphInternet" />
     <fragment
         android:id="@+id/navigate_home"
         android:name="com.marwadtech.userapp.ui.screens.home.DashboardFragment"

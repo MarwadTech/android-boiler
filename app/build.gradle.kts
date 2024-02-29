@@ -161,7 +161,7 @@ dependencies {
     implementation("io.github.ParkSangGwon:tedimagepicker:1.4.2")
 
     // Ucrop
-//    implementation("com.github.yalantis:ucrop:2.2.8")
+    implementation("com.github.yalantis:ucrop:2.2.8")
 
     // compress image
     implementation("id.zelory:compressor:3.0.1")

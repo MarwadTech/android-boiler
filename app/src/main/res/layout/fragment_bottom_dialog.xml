@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:context=".common.BottomDialogFragment">
+
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:cardCornerRadius="@dimen/dimen_15"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:padding="@dimen/dimen_25">-->
+
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_attention"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_10"
+        app:layout_constraintBottom_toTopOf="@id/txtMassage"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtMassage"
+        style="@style/materialText_medium_20"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_5"
+        android:textColor="@color/purple"
+        android:gravity="center|center_vertical"
+        android:text="@string/are_you_sure"
+        app:layout_constraintBottom_toTopOf="@id/txtMassageDescription"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toBottomOf="@id/imgIcon" />
+
+
+    <TextView
+        android:id="@+id/txtMassageDescription"
+        style="@style/materialText_regular_16"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:gravity="center|center_vertical"
+        android:textColor="@color/light_purple"
+        android:visibility="visible"
+        android:text="@string/you_want_to_logout"
+        app:layout_constraintBottom_toTopOf="@id/btnYes"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toBottomOf="@id/txtMassage" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnYes"
+        style="@style/materialButton"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginVertical="@dimen/dimen_25"
+        android:layout_marginStart="@dimen/dimen_7"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/yes"
+        android:textSize="@dimen/_14sp"
+        app:cornerRadius="@dimen/dimen_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toEndOf="@id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@id/txtMassageDescription" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel"
+        style="@style/materialButton.outlined"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginEnd="@dimen/dimen_7"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/cancel"
+        android:textColor="@color/grey_97"
+        android:textSize="@dimen/_14sp"
+        app:cornerRadius="@dimen/dimen_8"
+        app:layout_constraintBottom_toBottomOf="@id/btnYes"
+        app:layout_constraintEnd_toStartOf="@id/btnYes"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toTopOf="@id/btnYes"
+        app:strokeColor="@color/grey_97" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

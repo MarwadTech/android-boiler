@@ -12,11 +12,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.dialogs.ProgressDialog
 import com.marwadtech.userapp.utils.CustomToast
+import com.marwadtech.userapp.utils.SpUtils
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 abstract class BaseDialogFragment :
     BottomSheetDialogFragment() {
+
+
+    @Inject
+    lateinit var spUtils: SpUtils
 
     lateinit var customToast: CustomToast
     lateinit var loader: ProgressDialog

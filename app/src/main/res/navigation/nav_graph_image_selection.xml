@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navGraphImageSelection"
+    app:startDestination="@+id/imageSelectionFragment">
+
+    <dialog
+        android:id="@+id/imageSelectionFragment"
+        android:name="com.marwadtech.userapp.common.ImageSelectionBottomSheetFragment"
+        android:label="fragment_image_selection"
+        tools:layout="@layout/fragment_image_selection_bottom_sheet">
+
+        <argument
+            android:name="hasBrowser"
+            android:defaultValue="false"
+            app:argType="boolean"
+            app:nullable="false" />
+
+        <argument
+            android:name="hasGallery"
+            android:defaultValue="true"
+            app:argType="boolean"
+            app:nullable="false" />
+
+    </dialog>
+
+</navigation>

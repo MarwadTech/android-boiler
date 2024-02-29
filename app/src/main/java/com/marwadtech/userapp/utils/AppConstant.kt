@@ -40,3 +40,19 @@ object DateFormat {
     const val YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss"
     const val EEE_MMM_DD_HH_MM_SS_ZZZ_YYYY = "EEE MMM dd HH:mm:ss zzz yyyy"
 }
+
+object RequestKey {
+    const val IMAGE_SELECTION = "ImageSelection"
+    const val DELETE = "Delete"
+}
+object ImageSelection {
+    const val Camera = 1
+    const val Gallery = 2
+    const val Browser = 3
+}
+
+object BottomDialogRequestKey {
+    const val LOGOUT = 1
+    const val DELETE = 2
+    const val UPDATE = 3
+}
