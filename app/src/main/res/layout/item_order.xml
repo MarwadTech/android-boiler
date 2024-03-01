@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_8"
+    app:cardCornerRadius="@dimen/dimen_10"
+    android:elevation="@dimen/dimen_0"
+    app:cardElevation="@dimen/dimen_5"
+    style="@style/CardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_15"
+        android:background="@drawable/shape_rounded_outline_grey_d1_10dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_60"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/user_pic2"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView"
+            android:id="@+id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/txtDeliveryTime"
+            app:layout_constraintEnd_toStartOf="@id/txtOrderTitle"/>
+
+
+        <TextView
+            android:id="@+id/txtOrderTitle"
+            style="@style/materialText_Semi_Bold_16"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:layout_marginStart="@dimen/dimen_10"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/order_title"
+            android:elevation="@dimen/dimen_2"
+            app:layout_constraintStart_toEndOf="@id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/txtOrderId"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="@id/imgProduct"
+            android:textColor="@color/light_orange"/>
+
+
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderId"
+            android:text="@string/order_id_od1256nm458"
+            android:maxLines="1"
+            style="@style/materialText_regular_12"
+            android:textColor="@color/text_grey"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintEnd_toStartOf="@id/imgRightArrow"
+            app:layout_constraintBottom_toBottomOf="@id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@id/txtOrderTitle"
+            app:layout_constraintStart_toStartOf="@id/txtOrderTitle"
+            />
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgRightArrow"
+            android:padding="@dimen/dimen_8"
+            android:background="?selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="@id/txtOrderId"
+            app:layout_constraintBottom_toBottomOf="@id/txtOrderId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtOrderId"
+            android:src="@drawable/ic_right_arrow_grey"/>
+
+
+        <com.marwadtech.userapp.utils.SimpleRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtDeliveryTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srb_starSize="@dimen/dimen_30"
+            app:srb_starBorderWidth="2.5"
+            app:srb_starCornerRadius="8"
+            app:srb_isIndicator="true"
+            app:srb_stepSize="1"
+            app:srb_fillColor="@color/rating_green"
+            app:srb_rating="1"
+            android:layout_marginTop="@dimen/dimen_5"
+            app:layout_constraintHorizontal_bias=".0"
+            app:srb_borderColor="@color/grey_6B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/ratingbar"/>
+
+        <TextView
+            android:id="@+id/txtDeliveryTime"
+            style="@style/materialText_regular_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/delivery_expected_by_jun_04_2022"
+            android:gravity="start|center_vertical"
+            android:paddingVertical="@dimen/dimen_5"
+            app:layout_constraintStart_toStartOf="@id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/ratingbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toBottomOf="@id/imgProduct"
+            android:textColor="@color/grey_8b"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

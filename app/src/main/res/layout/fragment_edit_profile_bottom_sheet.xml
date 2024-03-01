@@ -1,14 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
     tools:context=".ui.screens.profile.EditProfileBottomSheetFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/bottom_sheet_bg"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dimen_10">
+
+
+            <TextView
+                android:id="@+id/txtEditProfile"
+                style="@style/materialText_Semi_Bold_22"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginVertical="@dimen/dimen_25"
+                android:gravity="center"
+                android:text="@string/edit_profile"
+                android:textColor="@color/light_orange"
+                android:textSize="@dimen/_24sp"
+                app:layout_constraintBottom_toTopOf="@id/imgProfile"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="@dimen/dimen_96"
+                android:layout_height="@dimen/dimen_0"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:padding="@dimen/dimen_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_pic1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtEditProfile"
+                app:layout_constraintBottom_toTopOf="@id/txtName"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView_circle"
+                app:strokeColor="@color/light_orange"
+                app:strokeWidth="@dimen/dimen_2" />
+
+
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="@dimen/dimen_15"
+                android:layout_height="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_5"
+                app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
+                app:layout_constraintEnd_toEndOf="@+id/imgProfile" />
+
+            <ImageView
+                android:id="@+id/imgCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dimen_15"
+                android:src="@drawable/ic_camera_mango"
+                app:layout_constraintBottom_toBottomOf="@id/space"
+                app:layout_constraintEnd_toEndOf="@id/space"
+                app:layout_constraintStart_toStartOf="@+id/space"
+                app:layout_constraintTop_toTopOf="@+id/space" />
+
+
+
+
+            <TextView
+                android:id="@+id/txtName"
+                style="@style/materialText_medium_14"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="start"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/edtName"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/imgProfile" />
+
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:background="@drawable/shape_rounded_outline_grey_4dp"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:maxLength="25"
+                android:paddingStart="@dimen/dimen_10"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtContactNumber"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+
+
+
+            <TextView
+                android:id="@+id/txtContactNumber"
+                style="@style/materialText_medium_14"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="start"
+                android:text="@string/contact_number"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/edtContactNumber"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtName" />
+
+
+            <EditText
+                android:id="@+id/edtContactNumber"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:background="@drawable/shape_rounded_outline_grey_4dp"
+                android:drawableStart="@drawable/ic_call"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/contact_number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:digits="0123456789"
+                android:paddingStart="@dimen/dimen_10"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtEmail"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtContactNumber" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/txtEmail"
+                style="@style/materialText_medium_14"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:gravity="start"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/edtEmail"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtContactNumber" />
+
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:background="@drawable/shape_rounded_outline_grey_4dp"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:paddingStart="@dimen/dimen_10"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/btnSave"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtEmail" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_25"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/save"
+                android:textSize="@dimen/_14sp"
+                android:backgroundTint="@color/light_orange"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintTop_toBottomOf="@id/edtEmail"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/btnCancel" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/materialButton.outlined"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/cancel"
+                android:textColor="@color/grey_97"
+                android:textSize="@dimen/_14sp"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintBottom_toBottomOf="@id/btnSave"
+                app:layout_constraintEnd_toStartOf="@id/btnSave"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="@id/btnSave"
+                app:strokeColor="@color/grey_97" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

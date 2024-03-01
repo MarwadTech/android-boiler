@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_5"
+    app:cardCornerRadius="@dimen/dimen_5"
+    app:cardElevation="@dimen/dimen_0"
+    style="@style/CardView">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notificationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/dimen_12"
+        android:paddingVertical="@dimen/dimen_15">
+
+        <TextView
+            android:id="@+id/txtTime"
+            style="@style/materialText_regular_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:elevation="@dimen/dimen_2"
+            android:gravity="start"
+            android:drawablePadding="@dimen/dimen_5"
+            android:text="time"
+            android:textColor="@color/grey_6B"
+            android:drawableStart="@drawable/ic_grey_dots"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtNotificationTitle"
+            app:layout_constraintBottom_toBottomOf="@id/txtNotificationTitle"
+            app:layout_constraintTop_toTopOf="@id/txtNotificationTitle" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNotificationTitle"
+            android:text="@string/title"
+            android:maxLines="2"
+            style="@style/materialText_medium_14"
+            android:textColor="@color/black_26"
+            android:layout_marginStart="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@id/txtNotificationDescription"
+            app:layout_constraintStart_toEndOf="@id/imgNotify"
+            app:layout_constraintEnd_toStartOf="@id/txtTime"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNotificationDescription"
+            android:text="@string/description"
+            android:textColor="@color/grey_6B"
+            android:layout_marginTop="@dimen/dimen_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/materialText_regular_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationTitle"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"/>
+
+
+
+        <ImageView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgNotify"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="@dimen/dimen_5"
+            android:visibility="visible"
+            android:src="@drawable/ic_adaptive_icon"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

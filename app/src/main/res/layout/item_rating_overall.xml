@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <View
+            android:id="@+id/txtOverallRatings"
+            style="@style/materialText_medium_16"
+            android:layout_width="@dimen/dimen_1"
+            android:layout_height="@dimen/dimen_0"
+            app:layout_constraintTop_toTopOf="@id/txt_5"
+            android:layout_marginHorizontal="@dimen/dimen_5"
+            app:layout_constraintEnd_toStartOf="@id/txt_5"
+            app:layout_constraintStart_toEndOf="@id/txtRatingAverageCount"
+            app:layout_constraintBottom_toBottomOf="@id/txt_1"
+            android:background="@color/grey_97"/>
+
+        <TextView
+            android:id="@+id/txtRatingAverageCount"
+            style="@style/materialText_semi_bold_25"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginVertical="@dimen/dimen_8"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="4.2"
+            android:elevation="@dimen/dimen_2"
+            android:gravity="center|center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtOverallRatings"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/ratingbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <com.marwadtech.userapp.utils.SimpleRatingBar
+            android:id="@+id/ratingbar"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            app:srb_rating="4.5"
+            app:srb_starsSeparation="@dimen/dimen_8"
+            app:srb_isIndicator="true"
+            app:srb_starCornerRadius="12"
+            android:keyboardNavigationCluster="false"
+            app:srb_borderColor="@color/rating_mango"
+            app:srb_pressedBorderColor="@color/rating_mango"
+            app:srb_fillColor="@color/rating_mango"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtRatingAverageCount"
+            app:layout_constraintStart_toStartOf="@id/txtRatingAverageCount"
+            app:layout_constraintEnd_toEndOf="@id/txtRatingAverageCount" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txt_5"
+            style="@style/materialText_regular_14"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/_5"
+            android:textAllCaps="true"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:gravity="center|center_vertical"
+            app:layout_constraintTop_toTopOf="@id/progress_5"
+            app:layout_constraintStart_toEndOf="@id/txtOverallRatings"
+            app:layout_constraintEnd_toStartOf="@id/progress_5"
+            app:layout_constraintBottom_toBottomOf="@id/progress_5"
+            android:textColor="@color/grey_6B"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_5"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_8"
+            android:progressDrawable="@drawable/shape_horizontal_rounded_progress"
+            android:progressTint="@color/rating_greens"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginStart="@dimen/dimen_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_5"
+            app:layout_constraintBottom_toTopOf="@id/progress_4"
+            app:layout_constraintTop_toTopOf="parent"
+            android:progress="100" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txt_4"
+            style="@style/materialText_regular_14"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/_4"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="@id/txt_5"
+            android:gravity="center|center_vertical"
+            app:layout_constraintTop_toTopOf="@id/progress_4"
+            app:layout_constraintEnd_toStartOf="@id/progress_4"
+            app:layout_constraintBottom_toBottomOf="@id/progress_4"
+            android:textColor="@color/grey_6B"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_4"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:progressDrawable="@drawable/shape_horizontal_rounded_progress"
+            android:progressTint="@color/rating_light_green"
+            app:layout_constraintStart_toStartOf="@id/progress_5"
+            app:layout_constraintTop_toBottomOf="@id/progress_5"
+            app:layout_constraintBottom_toTopOf="@id/progress_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:progress="80" />
+
+
+
+        <TextView
+            android:id="@+id/txt_3"
+            style="@style/materialText_regular_14"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/_3"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="@id/txt_5"
+            android:gravity="center|center_vertical"
+            app:layout_constraintTop_toTopOf="@id/progress_3"
+            app:layout_constraintEnd_toStartOf="@id/progress_3"
+            app:layout_constraintBottom_toBottomOf="@id/progress_3"
+            android:textColor="@color/grey_6B"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_3"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_8"
+            android:progressDrawable="@drawable/shape_horizontal_rounded_progress"
+            android:progressTint="@color/rating_yellow"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:layout_constraintStart_toStartOf="@id/progress_5"
+            app:layout_constraintBottom_toTopOf="@id/progress_2"
+            app:layout_constraintTop_toBottomOf="@id/progress_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:progress="65" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txt_2"
+            style="@style/materialText_regular_14"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/_2"
+            android:textAllCaps="true"
+            android:gravity="center|center_vertical"
+            app:layout_constraintTop_toTopOf="@id/progress_2"
+            app:layout_constraintEnd_toStartOf="@id/progress_2"
+            app:layout_constraintBottom_toBottomOf="@id/progress_2"
+            app:layout_constraintStart_toStartOf="@id/txt_5"
+            android:textColor="@color/grey_6B"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_2"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_8"
+            android:progressDrawable="@drawable/shape_horizontal_rounded_progress"
+            android:progressTint="@color/rating_gold"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:layout_constraintStart_toStartOf="@id/progress_5"
+            app:layout_constraintBottom_toTopOf="@id/progress_1"
+            app:layout_constraintTop_toBottomOf="@id/progress_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:progress="40" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txt_1"
+            style="@style/materialText_regular_14"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/_1"
+            app:layout_constraintStart_toStartOf="@id/txt_5"
+            android:textAllCaps="true"
+            android:gravity="center|center_vertical"
+            app:layout_constraintTop_toTopOf="@id/progress_1"
+            app:layout_constraintEnd_toStartOf="@id/progress_1"
+            app:layout_constraintBottom_toBottomOf="@id/progress_1"
+            android:textColor="@color/grey_6B"/>
+
+
+        <ProgressBar
+            android:id="@+id/progress_1"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:progressDrawable="@drawable/shape_horizontal_rounded_progress"
+            android:progressTint="@color/rating_rad"
+            app:layout_constraintStart_toStartOf="@id/progress_5"
+            app:layout_constraintTop_toBottomOf="@id/progress_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:progress="20" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
