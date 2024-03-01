@@ -43,4 +43,8 @@ class AuthRepositoryImpl @Inject constructor(
         return handleResponse(handleRequest(app){authApi.resetPassword(userRequestModel)})
     }
 
+    override suspend fun getCommonData(): BaseModel<UserAuthResponseModel> {
+        return handleResponse(handleRequest(app){authApi.getCommonData()})
+    }
+
 }

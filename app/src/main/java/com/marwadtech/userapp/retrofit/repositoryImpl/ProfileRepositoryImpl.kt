@@ -21,4 +21,8 @@ class ProfileRepositoryImpl @Inject constructor(
         return handleResponse(handleRequest(app){profileApi.updateProfile(userRequest)})
     }
 
+    override suspend fun getUserAddress(): BaseModel<UserResponseModel> {
+        return handleResponse(handleRequest(app){profileApi.getUserAddress()})
+    }
+
 }

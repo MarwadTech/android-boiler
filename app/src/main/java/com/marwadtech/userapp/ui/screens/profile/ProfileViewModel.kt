@@ -39,4 +39,16 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    private val _getUserAddress = MutableLiveData<BaseModel<UserResponseModel>>()
+
+    val getUserAddress: LiveData<BaseModel<UserResponseModel>>
+        get() = _getUserAddress
+    fun getUserAddress(){
+        viewModelScope.launch {
+            _getUserAddress.value =BaseModel.loading()
+            _getUserAddress.value = profileRepository.getUserAddress()
+            _getUserAddress.value = BaseModel.clear()
+        }
+    }
+
 }

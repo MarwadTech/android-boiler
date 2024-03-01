@@ -3,8 +3,15 @@ package com.marwadtech.userapp.di
 import android.app.Application
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.retrofit.repository.AuthRepository
+import com.marwadtech.userapp.retrofit.repository.NotificationRepository
+import com.marwadtech.userapp.retrofit.repository.ProfileRepository
 import com.marwadtech.userapp.retrofit.repositoryImpl.AuthRepositoryImpl
+import com.marwadtech.userapp.retrofit.repositoryImpl.NotificationRepositoryImpl
+import com.marwadtech.userapp.retrofit.repositoryImpl.NotificationRepositoryImpl_Factory
+import com.marwadtech.userapp.retrofit.repositoryImpl.ProfileRepositoryImpl
 import com.marwadtech.userapp.retrofit.service.AuthApi
+import com.marwadtech.userapp.retrofit.service.NotificationApi
+import com.marwadtech.userapp.retrofit.service.ProfileApi
 import com.marwadtech.userapp.utils.SpUtils
 import dagger.Module
 import dagger.Provides
@@ -81,5 +88,28 @@ class AppModule {
     @Singleton
     fun provideAuthRepository(app: Application, api: AuthApi): AuthRepository {
         return AuthRepositoryImpl(app, api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNotificationApi(app: Application): NotificationApi {
+        return getRetrofit(app).create(NotificationApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNotificationRepository(app: Application, api: NotificationApi): NotificationRepository {
+        return NotificationRepositoryImpl(app, api)
+    }
+    @Provides
+    @Singleton
+    fun provideProfileApi(app: Application): ProfileApi {
+        return getRetrofit(app).create(ProfileApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideProfileRepository(app: Application, api: ProfileApi): ProfileRepository {
+        return ProfileRepositoryImpl(app, api)
     }
 }

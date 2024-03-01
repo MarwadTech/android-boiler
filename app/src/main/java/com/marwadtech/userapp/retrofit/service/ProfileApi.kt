@@ -10,11 +10,19 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ProfileApi {
-    @GET("/")
+    @GET("users/me")
     suspend fun getUserDetails(): Response<BaseModel<UserResponseModel>>
 
     @POST("/")
     suspend fun updateProfile(
         @Body userRequest: UserRequestModel
     ): Response<BaseModel<UserResponseModel>>
+
+    @GET("/")
+    suspend fun getUserAddress(): Response<BaseModel<UserResponseModel>>
+
+    @POST("/")
+    suspend fun uploadImage(
+
+    ):Response<BaseModel<UserResponseModel>>
 }

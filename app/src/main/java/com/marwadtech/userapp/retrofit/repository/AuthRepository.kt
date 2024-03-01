@@ -22,4 +22,6 @@ interface AuthRepository : IRepository {
     suspend fun forgotPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
 
     suspend fun resetPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel>
+
+    suspend fun getCommonData():BaseModel<UserAuthResponseModel>
 }

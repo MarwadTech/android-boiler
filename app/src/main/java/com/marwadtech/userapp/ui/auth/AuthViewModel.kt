@@ -113,5 +113,15 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    private val _getCommonData = MutableLiveData<BaseModel<UserAuthResponseModel>>()
+    val getCommonData: LiveData<BaseModel<UserAuthResponseModel>>
+        get() = _getCommonData
 
+    fun getCommonData() {
+        viewModelScope.launch {
+            _getCommonData.value = BaseModel.loading()
+            _getCommonData.value = authRepository.getCommonData()
+            _getCommonData.value = BaseModel.clear()
+        }
+    }
 }

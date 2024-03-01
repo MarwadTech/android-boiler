@@ -12,4 +12,5 @@ interface ProfileRepository : IRepository {
 
     suspend fun updateProfile(userRequest: UserRequestModel): BaseModel<UserResponseModel>
 
+    suspend fun getUserAddress(): BaseModel<UserResponseModel>
 }

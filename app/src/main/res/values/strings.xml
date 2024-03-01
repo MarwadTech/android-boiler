@@ -114,5 +114,6 @@
     <string name="logout">logout</string>
     <string name="delete">delete</string>
     <string name="restart">RESTART</string>
+    <string name="title">title</string>
 
 </resources>
