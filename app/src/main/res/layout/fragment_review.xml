@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.screens.profile.ReviewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/backgroundLightGrey">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imgEmptyNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_empty_request"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--            android:id="@+id/shimmerView"-->
+<!--            android:layout_width="@dimen/dimen_0"-->
+<!--            android:layout_height="@dimen/dimen_0"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/glRight"-->
+<!--            app:layout_constraintStart_toStartOf="@id/glLeft"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:paddingTop="@dimen/dimen_10">-->
+
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_user_review_list_shimmer" />-->
+<!--                <include layout="@layout/item_my_review_list_shimmer" />-->
+<!--            </LinearLayout>-->
+
+<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_0"
+            android:id="@+id/swipeRefreshLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_0"
+                tools:listitem="@layout/item_user_review_list"
+                tools:itemCount="2"
+                android:paddingTop="@dimen/dimen_10"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:id="@+id/rvReviewList"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constrainedHeight="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+
+
+            <!--    <include-->
+            <!--        android:layout_width="@dimen/dimen_0"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        layout="@layout/item_my_review_list"-->
+            <!--        android:layout_marginTop="@dimen/dimen_20"-->
+            <!--        android:id="@+id/rvReviewList"-->
+            <!--        app:layout_constraintStart_toStartOf="@id/glLeft"-->
+            <!--        app:layout_constraintEnd_toEndOf="@id/glRight"-->
+            <!--        app:layout_constraintTop_toBottomOf="@id/edtSearch"/>-->
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

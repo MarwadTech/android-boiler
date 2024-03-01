@@ -171,5 +171,53 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="check_out_the_latest_updates_and_promotions">Check out the latest updates and promotions</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="available">Available</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="number">number</string>
+    <string name="danger_zone">Danger Zone</string>
+    <string name="tell_us_what_you_love_about_the_app_or_what_we_could_be_doing_better">Tell us what you love about the app, or what we could be doing better</string>
+    <string name="write_a_review">write a review</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string name="how_was_your_experience_what_do_like_what_do_you_hate">How was your experience ? What do like ? What do you hate ?</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="address">Address</string>
+    <string name="make_default">Make Default</string>
+    <string name="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</string>
+    <string name="jane_cooper">Jane Cooper</string>
+    <string name="proceed">Proceed</string>
+    <string name="add_address">Add Address</string>
+    <string name="no_address_found">No Address Found</string>
+    <string name="_299">₹299</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="sumerpur">Sumerpur</string>
+    <string name="order_title">Order Title</string>
+    <string name="order_id_od1256nm458">Order ID : <b><font color="#000000">OD1256NM458</font></b></string>
+    <string name="delivery_expected_by_jun_04_2022">Delivery Expected by <b><font color="#787878">Jun 04, 2022</font></b></string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur">Lorem ipsum dolor sit amet consectetur.</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="inclusive_of_all_taxes">*Inclusive of All Taxes</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_odio_etiam_non_ut_proin_rutrum_risus_mi_eget_eget_commodo_vulputate_fringilla_fringilla_egestas_mi_enim_etiam_tortor_et_cursus_consequat_erat_pellentesque_dolor_lorem_sed_sed_ornare_id_est_pellentesque">Lorem ipsum dolor sit amet consectetur. Odio etiam non ut proin rutrum risus mi eget eget. Commodo vulputate fringilla fringilla egestas mi enim etiam tortor. Et cursus consequat erat pellentesque. Dolor lorem sed sed ornare id est pellentesque.</string>
+    <string name="select_quantity">Select Quantity</string>
+    <string name="all">All</string>
+    <string name="_5">5</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_2_5">2.5</string>
+    <string name="_1_5">1.5</string>
+    <string name="_1_0">1.0</string>
+    <string name="_0_5">0.5</string>
+    <string name="reviews_amp_ratings"><![CDATA[Reviews & Ratings]]></string>
+    <string name="rate_now">Rate Now</string>
 
 </resources>

@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screens.home.ProductDetailsFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundLightGrey">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProduct"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/white"
+                app:cardElevation="@dimen/dimen_0"
+                app:layout_constraintBottom_toTopOf="@id/rvProductPhoto"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_250"
+                    android:background="@color/grey">
+
+
+                    <ImageView
+                        android:id="@+id/imgProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/user_pic1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProductPhoto"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/dimen_10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardProduct"
+                app:spanCount="4"
+                android:orientation="horizontal"
+                tools:itemCount="8"
+                android:layout_marginVertical="@dimen/dimen_10"
+                tools:listitem="@layout/item_product_photos" />
+
+
+            <TextView
+                android:id="@+id/txtProductName"
+                style="@style/materialText_Semi_Bold_18"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/txtTaxes"
+                app:layout_constraintEnd_toStartOf="@id/txtPriceValue"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/rvProductPhoto" />
+
+
+            <TextView
+                android:id="@+id/txtPriceValue"
+                style="@style/materialText_Semi_Bold_22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="₹420/"
+                android:textColor="@color/light_orange"
+                app:layout_constraintBottom_toBottomOf="@id/txtProductName"
+                app:layout_constraintEnd_toStartOf="@id/txtUnits"
+                app:layout_constraintStart_toEndOf="@id/txtProductName"
+                app:layout_constraintTop_toTopOf="@id/txtProductName" />
+
+
+            <TextView
+                android:id="@+id/txtUnits"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:text="kg/unit"
+                app:layout_constraintVertical_bias="1.0"
+                android:textColor="@color/light_orange"
+                app:layout_constraintBottom_toBottomOf="@id/txtProductName"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/txtPriceValue"
+                app:layout_constraintTop_toTopOf="@id/txtProductName" />
+
+
+            <TextView
+                android:id="@+id/txtTaxes"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_2"
+                android:text="@string/inclusive_of_all_taxes"
+                android:textSize="@dimen/_10sp"
+                android:paddingBottom="@dimen/dimen_2"
+                android:textColor="@color/grey_8b"
+                app:layout_constraintBottom_toTopOf="@id/txtDescription"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtProductName" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                style="@style/materialText_regular_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                app:layout_goneMarginTop="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/dimen_2"
+                android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_odio_etiam_non_ut_proin_rutrum_risus_mi_eget_eget_commodo_vulputate_fringilla_fringilla_egestas_mi_enim_etiam_tortor_et_cursus_consequat_erat_pellentesque_dolor_lorem_sed_sed_ornare_id_est_pellentesque"
+                android:textColor="@color/grey_5e5f60"
+                app:layout_constraintBottom_toTopOf="@id/txtSelectQuantity"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtTaxes" />
+
+
+            <TextView
+                android:id="@+id/txtSelectQuantity"
+                style="@style/materialText_Semi_Bold_14"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="@string/select_quantity"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintBottom_toTopOf="@id/scrollViewHorizontalQuantity"
+                app:layout_constraintTop_toBottomOf="@id/txtDescription" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/scrollViewHorizontalQuantity"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginVertical="@dimen/dimen_10"
+                android:clipToPadding="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSelectQuantity">
+
+                <RadioGroup
+                    android:id="@+id/rgQuantityButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="true"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_16">
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_0_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawablePadding="@dimen/dimen_10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_8"
+                        android:text="@string/_0_5"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_1_0"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_1_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_1_5"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_2"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_2_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_2_5"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantity_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_5"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+
+                </RadioGroup>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/txtReviewsRatings"
+                style="@style/materialText_Semi_Bold_14"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:text="@string/reviews_amp_ratings"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/btnRateNow"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintBottom_toTopOf="@id/lytRatingOverall"
+                app:layout_constraintTop_toBottomOf="@id/scrollViewHorizontalQuantity" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRateNow"
+                style="@style/materialButton.outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/rate_now"
+                android:textColor="@color/light_orange"
+                android:textSize="@dimen/_10sp"
+                app:layout_constraintVertical_bias=".0"
+                app:cornerRadius="@dimen/dimen_4"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/txtReviewsRatings"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/txtReviewsRatings"
+                app:layout_constraintTop_toTopOf="@id/txtReviewsRatings"
+                app:strokeColor="@color/light_orange" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/scrollViewHorizontalRating"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginVertical="@dimen/dimen_10"
+                android:clipToPadding="true"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lytRatingOverall">
+
+                <RadioGroup
+                    android:id="@+id/rgRatingButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="true"
+                    android:gravity="center|center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_16">
+
+                    <RadioButton
+                        android:id="@+id/rbAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawablePadding="@dimen/dimen_10"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_8"
+                        android:text="@string/all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbFiveStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:drawableEnd="@drawable/star_selector_grey_to_light_orange"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_5"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbFourStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:drawableEnd="@drawable/star_selector_grey_to_light_orange"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_4"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbThreeStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:drawableEnd="@drawable/star_selector_grey_to_light_orange"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_3"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbTwoStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:drawableEnd="@drawable/star_selector_grey_to_light_orange"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_2"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOneStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/selector_outline_grey_to_solid_light_orange"
+                        android:button="@null"
+                        android:checked="false"
+                        android:drawableEnd="@drawable/star_selector_grey_to_light_orange"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:text="@string/_1"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_grey_light_orange_checkable"
+                        android:textSize="@dimen/_14sp" />
+                </RadioGroup>
+            </HorizontalScrollView>
+
+            <include
+                android:id="@+id/lytRatingOverall"
+                layout="@layout/item_rating_overall"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_10"
+                app:layout_constraintBottom_toTopOf="@+id/scrollViewHorizontalRating"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtReviewsRatings" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReview"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingTop="@dimen/dimen_5"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/btnSave"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/scrollViewHorizontalRating"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_product_review" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_25"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/save"
+                android:visibility="visible"
+                android:textSize="@dimen/_14sp"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintVertical_bias=".0"
+                android:backgroundTint="@color/light_orange"
+                app:layout_constraintTop_toBottomOf="@id/rvReview"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/btnAddToCart" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddToCart"
+                style="@style/materialButton.outlined"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/light_orange"
+                android:textSize="@dimen/_14sp"
+                app:cornerRadius="@dimen/dimen_8"
+                android:visibility="visible"
+                app:layout_constraintVertical_bias=".0"
+                app:layout_constraintBottom_toBottomOf="@id/btnSave"
+                app:layout_constraintEnd_toStartOf="@id/btnSave"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="@id/btnSave"
+                app:strokeColor="@color/light_orange" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
