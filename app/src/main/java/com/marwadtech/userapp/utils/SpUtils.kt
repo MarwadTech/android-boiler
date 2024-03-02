@@ -3,6 +3,7 @@ package com.marwadtech.userapp.utils
 import android.content.Context
 import com.google.gson.Gson
 import com.marwadtech.userapp.R
+import com.marwadtech.userapp.retrofit.models.response.UserResponseModel
 
 class SpUtils(private val context: Context) {
     val pref = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
@@ -32,11 +33,11 @@ class SpUtils(private val context: Context) {
         get() = getDataByKey(ACCESS_TOKEN, "")
         set(accessToken) = storeDataByKey(ACCESS_TOKEN, accessToken)
 
-    var user: Any?
+    var user: UserResponseModel?
         get() {
             val gson = Gson()
             val json = getDataByKey(USER_MODEL, "")
-            return gson.fromJson(json, Any::class.java)
+            return gson.fromJson(json, UserResponseModel::class.java)
         }
         set(user) {
             val gson = Gson()

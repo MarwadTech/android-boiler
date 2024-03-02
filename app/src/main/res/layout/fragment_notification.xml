@@ -34,7 +34,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.marwadtech.userapp.utils.pagination.LoadMoreRecyclerView
                 android:id="@+id/rvNotificationList"
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="@dimen/dimen_0"

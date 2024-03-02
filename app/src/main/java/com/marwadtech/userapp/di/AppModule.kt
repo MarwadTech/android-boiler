@@ -3,13 +3,15 @@ package com.marwadtech.userapp.di
 import android.app.Application
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.retrofit.repository.AuthRepository
+import com.marwadtech.userapp.retrofit.repository.LevelRepository
 import com.marwadtech.userapp.retrofit.repository.NotificationRepository
 import com.marwadtech.userapp.retrofit.repository.ProfileRepository
 import com.marwadtech.userapp.retrofit.repositoryImpl.AuthRepositoryImpl
+import com.marwadtech.userapp.retrofit.repositoryImpl.LevelRepositoryImpl
 import com.marwadtech.userapp.retrofit.repositoryImpl.NotificationRepositoryImpl
-import com.marwadtech.userapp.retrofit.repositoryImpl.NotificationRepositoryImpl_Factory
 import com.marwadtech.userapp.retrofit.repositoryImpl.ProfileRepositoryImpl
 import com.marwadtech.userapp.retrofit.service.AuthApi
+import com.marwadtech.userapp.retrofit.service.LevelApi
 import com.marwadtech.userapp.retrofit.service.NotificationApi
 import com.marwadtech.userapp.retrofit.service.ProfileApi
 import com.marwadtech.userapp.utils.SpUtils
@@ -111,5 +113,16 @@ class AppModule {
     @Singleton
     fun provideProfileRepository(app: Application, api: ProfileApi): ProfileRepository {
         return ProfileRepositoryImpl(app, api)
+    }
+    @Provides
+    @Singleton
+    fun provideLevelApi(app: Application): LevelApi {
+        return getRetrofit(app).create(LevelApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLevelRepository(app: Application, api: LevelApi): LevelRepository {
+        return LevelRepositoryImpl(app, api)
     }
 }

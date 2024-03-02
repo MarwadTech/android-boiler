@@ -1,14 +1,14 @@
-package com.marwadtech.userapp.retrofit.models.response
+package com.marwadtech.userapp.retrofit.models.request
 
 import com.google.gson.annotations.Expose
-
 import com.google.gson.annotations.SerializedName
+import com.marwadtech.userapp.retrofit.models.response.GeoLocation
 import java.io.Serializable
 
-data class UserAddressResponseModel(
-    @SerializedName("id")
+data class AddressRequestModel (
+    @SerializedName("type")
     @Expose
-    var id: String? = null,
+    var type: String? = null,
 
     @SerializedName("user_name")
     @Expose
@@ -17,14 +17,6 @@ data class UserAddressResponseModel(
     @SerializedName("phone_number")
     @Expose
     var phoneNumber: String? = null,
-
-    @SerializedName("type")
-    @Expose
-    var type: String? = null,
-
-    @SerializedName("user_id")
-    @Expose
-    var userId: String? = null,
 
     @SerializedName("is_default")
     @Expose
@@ -56,23 +48,5 @@ data class UserAddressResponseModel(
 
     @SerializedName("geo_location")
     @Expose
-    var geoLocation: GeoLocation? = null,
-
-    @SerializedName("created_at")
-    @Expose
-    var createdAt: String? = null,
-
-    @SerializedName("updated_at")
-    @Expose
-    var updatedAt: String? = null
-):Serializable
-
-data class GeoLocation(
-    @SerializedName("type")
-    @Expose
-    var type: String? = null,
-
-    @SerializedName("coordinates")
-    @Expose
-    var coordinates: List<Double>? = null
+    var geoLocation: GeoLocation? = null
 ):Serializable

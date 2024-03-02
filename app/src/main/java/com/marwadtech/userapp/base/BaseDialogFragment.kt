@@ -26,9 +26,19 @@ abstract class BaseDialogFragment :
 
     lateinit var customToast: CustomToast
     lateinit var loader: ProgressDialog
+    private lateinit var progressDialog: ProgressDialog
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+    }
+
+    fun showProgressbar() {
+        progressDialog.show()
+    }
+
+    fun hideProgressbar() {
+        progressDialog.dismiss()
     }
 
     override fun getTheme(): Int {
@@ -39,7 +49,11 @@ abstract class BaseDialogFragment :
         super.onCreate(savedInstanceState)
         loader = ProgressDialog(requireActivity())
         customToast = CustomToast(requireActivity())
+        progressDialog = ProgressDialog(requireActivity())
+
     }
+
+
 
 //    @Inject
 //    lateinit var spUtils: SpUtils

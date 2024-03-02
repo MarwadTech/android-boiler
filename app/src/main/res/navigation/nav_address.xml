@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_address"
+    app:startDestination="@id/selfAddressFragment">
+    <include app:graph="@navigation/nav_bottom_sheet" />
+    <fragment
+        android:id="@+id/selfAddressFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.SelfAddressFragment"
+        android:label="fragment_self_address"
+        tools:layout="@layout/fragment_self_address">
+        <argument
+            android:name="isFromProfile"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+        <action
+            android:id="@+id/action_selfAddressFragment_to_nestedBottomDialogFragment"
+            app:destination="@id/nestedBottomDialogFragment">
+            <argument
+                app:argType="string"
+                android:name="title"
+                app:nullable="true"/>
+            <argument
+                app:argType="string"
+                android:name="description"
+                app:nullable="true"
+                android:defaultValue=""/>
+            <argument
+                app:argType="integer"
+                android:name="requestKey"
+                app:nullable="false"/>
+        </action>
+    </fragment>
+</navigation>

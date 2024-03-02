@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.marwadtech.userapp.databinding.ItemListTestingBinding
+import com.marwadtech.userapp.databinding.ItemNotificationListBinding
 import com.marwadtech.userapp.retrofit.models.response.NotificationResponseModel
 
 class NotificationAdapter (
     private val listener: (NotificationResponseModel) -> Unit,
 ):RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder>(){
 
-    inner class NotificationViewHolder(val binding: ItemListTestingBinding) :
+    inner class NotificationViewHolder(val binding: ItemNotificationListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NotificationResponseModel) {
 
@@ -42,7 +42,7 @@ class NotificationAdapter (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
         val binding =
-            ItemListTestingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemNotificationListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NotificationViewHolder(binding)
     }
 

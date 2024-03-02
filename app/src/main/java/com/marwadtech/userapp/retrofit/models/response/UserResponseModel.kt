@@ -39,5 +39,9 @@ class UserResponseModel(
 
     @SerializedName("addresses")
     @Expose
-    var addresses: ArrayList<UserAddressResponseModel>? = null
+    var addresses: ArrayList<AddressResponseModel>? = null,
+
+    @SerializedName("avatar")
+    @Expose
+    var avatar: ImageResponseModel? = null
 ):Serializable

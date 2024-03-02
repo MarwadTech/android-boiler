@@ -36,14 +36,14 @@ class SimpleAdapter(
             oldItem: NotificationResponseModel,
             newItem: NotificationResponseModel
         ): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
             oldItem: NotificationResponseModel,
             newItem: NotificationResponseModel
         ): Boolean {
-            return true
+            return oldItem == newItem
         }
     }
 

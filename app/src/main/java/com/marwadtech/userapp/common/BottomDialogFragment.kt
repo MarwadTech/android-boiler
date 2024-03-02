@@ -47,10 +47,14 @@ class BottomDialogFragment : BaseDialogFragment() {
                 binding.imgIcon.setImageResource(R.drawable.ic_attention)
                 binding.btnYes.text = getString(R.string.logout)
             }
-            BottomDialogRequestKey.DELETE -> {
+
+            BottomDialogRequestKey.DELETE_ACCOUNT,
+            BottomDialogRequestKey.DELETE_ADDRESS,
+            -> {
                 binding.imgIcon.setImageResource(R.drawable.ic_attention)
                 binding.btnYes.text = getString(R.string.delete)
             }
+
             else -> {
                 binding.imgIcon.setImageResource(R.drawable.ic_attention)
             }
@@ -62,15 +66,22 @@ class BottomDialogFragment : BaseDialogFragment() {
         binding.btnYes.setSingleClickListener() {
             when (args.requestKey) {
                 BottomDialogRequestKey.LOGOUT -> {
-                    logout(requireContext(),spUtils)
-                    goAuth()
+                    logout(requireContext(), spUtils)
                 }
 
-                BottomDialogRequestKey.DELETE -> {
+                BottomDialogRequestKey.DELETE_ACCOUNT -> {
                     findNavController().popBackStack()
                     setFragmentResult(
-                        RequestKey.DELETE,
-                        bundleOf(RequestKey.DELETE to true)
+                        RequestKey.DELETE_ACCOUNT,
+                        bundleOf(RequestKey.DELETE_ACCOUNT to true)
+                    )
+                }
+
+                BottomDialogRequestKey.DELETE_ADDRESS -> {
+                    findNavController().popBackStack()
+                    setFragmentResult(
+                        RequestKey.DELETE_ADDRESS,
+                        bundleOf(RequestKey.DELETE_ADDRESS to true)
                     )
                 }
             }

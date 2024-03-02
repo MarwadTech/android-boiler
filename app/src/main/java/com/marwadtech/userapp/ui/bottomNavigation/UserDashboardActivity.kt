@@ -77,15 +77,20 @@ class UserDashboardActivity : BaseActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
-
                 R.id.navigate_home -> {
                     setToolbar(
                         isVisible = true,
                         isCenter = true
                     )
                 }
-
-
+                R.id.selfAddressFragment,
+                R.id.feedbackFragment->{
+                    binding.bottomNavBar.gone()
+                    setToolbar(
+                        isVisible = true,
+                        isCenter = true
+                    )
+                }
                 else -> {
 
                 }

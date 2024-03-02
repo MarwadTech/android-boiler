@@ -43,7 +43,8 @@ object DateFormat {
 
 object RequestKey {
     const val IMAGE_SELECTION = "ImageSelection"
-    const val DELETE = "Delete"
+    const val DELETE_ACCOUNT = "DELETE_ACCOUNT"
+    const val DELETE_ADDRESS = "DELETE_ADDRESS"
 }
 object ImageSelection {
     const val Camera = 1
@@ -53,6 +54,20 @@ object ImageSelection {
 
 object BottomDialogRequestKey {
     const val LOGOUT = 1
-    const val DELETE = 2
+    const val DELETE_ACCOUNT = 2
     const val UPDATE = 3
+    const val DELETE_ADDRESS = 4
+    const val UPDATE_ADDRESS = 5
+}
+
+object ProfileOptionId {
+    const val EDIT_PROFILE = 1
+    const val ADDRESS = 2
+    const val CHANGE_PASSWORD = 3
+    const val RATE_US = 4
+    const val PRIVACY_POLICY = 5
+    const val TERMS_AND_CONDITIONS = 6
+    const val HELP_AND_SUPPORT = 7
+    const val DELETE_ACCOUNT = 8
+    const val LOG_OUT = 9
 }

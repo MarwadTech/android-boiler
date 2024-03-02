@@ -2,11 +2,9 @@ package com.marwadtech.userapp.ui.screens.notification
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.google.gson.JsonObject
 import com.marwadtech.userapp.R
@@ -50,6 +48,7 @@ class NotificationFragment : BaseFragment(), LoadMoreRecyclerView.LoadMoreListen
         )
         setOnClickListener()
         setNotificationApi()
+        initView()
         setUpAdapter()
     }
 
@@ -70,7 +69,7 @@ class NotificationFragment : BaseFragment(), LoadMoreRecyclerView.LoadMoreListen
 
             }
         }
-//        binding.rvlist.adapter = adapter
+        binding.rvNotificationList.adapter = adapter
     }
 
 
@@ -90,7 +89,7 @@ class NotificationFragment : BaseFragment(), LoadMoreRecyclerView.LoadMoreListen
 
             result.isSuccessfully() -> {
                 Log.e(TAG, "handleGetAllNotificationsResult: isSuccessfully")
-//                binding.rvPhRhLink.setLoadedCompleted()
+                binding.rvNotificationList.setLoadedCompleted()
                 result.data?.apply {
                     if (this.metaPagination?.currentPage == 1) {
                         endIndex = this.metaPagination.totalPages
@@ -127,6 +126,10 @@ class NotificationFragment : BaseFragment(), LoadMoreRecyclerView.LoadMoreListen
         }
 
     }
+    private fun initView() {
+        binding.rvNotificationList.setLoadMoreListener(this)
+    }
+
     override fun onLoadMore() {
         if (startIndex <= endIndex) {
             Log.e(TAG, "onLoadMore: $startIndex")
