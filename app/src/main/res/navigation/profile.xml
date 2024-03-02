@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigate_profile"
+    app:startDestination="@id/profileFragment">
+
+    <include app:graph="@navigation/nav_bottom_sheet" />
+
+    <include app:graph="@navigation/nav_address" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileBottomSheetFragment"
+            app:destination="@id/editProfileBottomSheetFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordBottomSheetFragment"
+            app:destination="@id/changePasswordBottomSheetFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_nav_address"
+            app:destination="@id/nav_address">
+            <argument
+                android:name="isFromProfile"
+                app:argType="boolean"
+                android:defaultValue="true"/>
+        </action>
+        <action
+            android:id="@+id/action_profileFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_nestedBottomDialogFragment"
+            app:destination="@id/nestedBottomDialogFragment">
+            <argument
+                app:argType="string"
+                android:name="title"
+                app:nullable="true"/>
+            <argument
+                app:argType="string"
+                android:name="description"
+                app:nullable="true"
+                android:defaultValue=""/>
+            <argument
+                app:argType="integer"
+                android:name="requestKey"
+                app:nullable="false"/>
+        </action>
+    </fragment>
+    <dialog
+        android:id="@+id/editProfileBottomSheetFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.EditProfileBottomSheetFragment"
+        android:label="fragment_edit_profile_bottom_sheet"
+        tools:layout="@layout/fragment_edit_profile_bottom_sheet" />
+    <dialog
+        android:id="@+id/changePasswordBottomSheetFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.ChangePasswordBottomSheetFragment"
+        android:label="fragment_change_password_bottom_sheet"
+        tools:layout="@layout/fragment_change_password_bottom_sheet" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.FeedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+
+
+</navigation>

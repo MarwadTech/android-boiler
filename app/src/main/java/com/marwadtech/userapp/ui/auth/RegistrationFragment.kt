@@ -3,11 +3,9 @@ package com.marwadtech.userapp.ui.auth
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.marwadtech.userapp.R
@@ -72,7 +70,7 @@ class RegistrationFragment : BaseFragment() {
             if (validation()){
                 viewModel.checkUser(
                     UserRequestModel(
-                        fullName = binding.edtName.getValue(),
+                        name = binding.edtName.getValue(),
                         phoneNumber = binding.edtMobileNumber.getValue(),
                         email =  binding.edtMail.getValue(),
                         password =  binding.edtPassword.getValue()
@@ -169,7 +167,7 @@ class RegistrationFragment : BaseFragment() {
 
     private fun navigationOtpVerification() {
         val userData = UserRequestModel(
-            fullName = binding.edtName.getValue(),
+            name = binding.edtName.getValue(),
             phoneNumber = binding.edtMobileNumber.getValue(),
             email =  binding.edtMail.getValue(),
             password =  binding.edtPassword.getValue()

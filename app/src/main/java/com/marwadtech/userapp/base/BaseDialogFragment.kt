@@ -12,17 +12,33 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.dialogs.ProgressDialog
 import com.marwadtech.userapp.utils.CustomToast
+import com.marwadtech.userapp.utils.SpUtils
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 abstract class BaseDialogFragment :
     BottomSheetDialogFragment() {
 
+
+    @Inject
+    lateinit var spUtils: SpUtils
+
     lateinit var customToast: CustomToast
     lateinit var loader: ProgressDialog
+    private lateinit var progressDialog: ProgressDialog
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+    }
+
+    fun showProgressbar() {
+        progressDialog.show()
+    }
+
+    fun hideProgressbar() {
+        progressDialog.dismiss()
     }
 
     override fun getTheme(): Int {
@@ -33,7 +49,11 @@ abstract class BaseDialogFragment :
         super.onCreate(savedInstanceState)
         loader = ProgressDialog(requireActivity())
         customToast = CustomToast(requireActivity())
+        progressDialog = ProgressDialog(requireActivity())
+
     }
+
+
 
 //    @Inject
 //    lateinit var spUtils: SpUtils

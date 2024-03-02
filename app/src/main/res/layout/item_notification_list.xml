@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_5"
+    app:cardCornerRadius="@dimen/dimen_5"
+    app:cardElevation="@dimen/dimen_0"
+    style="@style/CardView">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notificationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notification_bg_selector"
+        android:paddingBottom="@dimen/dimen_15">
+
+        <TextView
+            android:id="@+id/txtTime"
+            style="@style/materialText_medium_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:elevation="@dimen/dimen_2"
+            android:gravity="start"
+            android:padding="@dimen/dimen_5"
+            android:text="time"
+            android:textColor="@color/grey_a5acb8"
+            android:textSize="@dimen/_8sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNotificationTitle"
+            android:text="@string/title"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/dimen_15"
+            style="@style/materialText_Semi_Bold_12"
+            android:textColor="@color/purple"
+            android:layout_marginStart="@dimen/dimen_25"
+            android:layout_marginEnd="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@id/txtNotificationDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtTime"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNotificationDescription"
+            android:text="@string/description"
+            android:textColor="@color/grey_99"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@id/txtNotificationSubDescription"
+            style="@style/materialText_regular_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationTitle"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"/>
+
+
+
+
+        <TextView
+            android:id="@+id/txtNotificationSubDescription"
+            style="@style/materialText_medium_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/check_out_the_latest_updates_and_promotions"
+            android:elevation="@dimen/dimen_2"
+            android:textColor="@color/grey_66"
+            android:layout_marginTop="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@id/imgUploaded"
+            android:layout_marginEnd="@dimen/dimen_18"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationDescription"/>
+
+
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgUploaded"
+            android:layout_width="@dimen/dimen_55"
+            android:layout_height="@dimen/dimen_45"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user"
+            app:layout_constraintDimensionRatio="1:1"
+            android:visibility="visible"
+            android:layout_marginEnd="@dimen/dimen_10"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView"
+            android:layout_marginTop="@dimen/dimen_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationSubDescription"/>
+
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/imgUploaded1"-->
+<!--            android:layout_width="@dimen/dimen_45"-->
+<!--            android:layout_height="@dimen/dimen_0"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/user_pic2"-->
+<!--            app:layout_constraintDimensionRatio="1:1"-->
+<!--            android:visibility="visible"-->
+<!--            android:layout_marginStart="@dimen/dimen_10"-->
+<!--            android:layout_marginEnd="@dimen/dimen_10"-->
+<!--            app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/imgUploaded"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imgUploaded"-->
+<!--            app:layout_constraintTop_toTopOf="@id/imgUploaded"/>-->
+
+
+        <ImageView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgDots"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/dimen_8"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+            android:src="@drawable/ic_purple_dots"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

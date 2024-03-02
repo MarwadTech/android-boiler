@@ -4,10 +4,10 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class UserRequestModel (
+data class UserRequestModel(
     @SerializedName("name")
     @Expose
-    var fullName: String? = null,
+    var name: String? = null,
 
     @SerializedName("phone_number")
     @Expose
@@ -45,5 +45,9 @@ data class UserRequestModel (
     @Expose
     var confirmNewPassword: String? = null,
 
+    @SerializedName("image_id")
+    @Expose
+    var imageId: String? = null
 
-):Serializable
+
+) : Serializable

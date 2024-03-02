@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_8"
+    app:cardCornerRadius="@dimen/dimen_10"
+    android:elevation="@dimen/dimen_0"
+    app:cardElevation="@dimen/dimen_2"
+    style="@style/CardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_15"
+        android:background="@drawable/shape_rounded_outline_grey_d1_10dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/user_pic2"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/dimen_2"
+            app:strokeColor="@color/lightest_green"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView_circle"
+            android:id="@+id/imgProfile"
+            app:strokeWidth="@dimen/dimen_2"
+            app:layout_constraintEnd_toStartOf="@id/txtName"/>
+
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_2"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
+            app:layout_constraintEnd_toEndOf="@+id/imgProfile" />
+
+        <ImageView
+            android:id="@+id/imgDots"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_15"
+            android:elevation="@dimen/dimen_15"
+            android:src="@drawable/shape_circle_outline_lightest_green"
+            app:layout_constraintBottom_toBottomOf="@id/space"
+            app:layout_constraintEnd_toEndOf="@id/space"
+            app:layout_constraintStart_toStartOf="@+id/space"
+            app:layout_constraintTop_toTopOf="@+id/space" />
+
+
+        <TextView
+            android:id="@+id/txtName"
+            style="@style/materialText_Semi_Bold_16"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textSize="@dimen/_15sp"
+            android:layout_marginStart="@dimen/dimen_10"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/name"
+            android:elevation="@dimen/dimen_2"
+            app:layout_constraintStart_toEndOf="@id/imgProfile"
+            app:layout_constraintBottom_toTopOf="@id/txtMassage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="@id/imgProfile"
+            android:textColor="@color/black"/>
+
+
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtMassage"
+            android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur"
+            android:maxLines="1"
+            style="@style/materialText_regular_12"
+            android:textColor="@color/grey_54"
+            android:textSize="@dimen/_13sp"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ratingbar"
+            app:layout_constraintTop_toBottomOf="@id/txtName"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            />
+
+
+
+        <com.marwadtech.userapp.utils.SimpleRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtMassage"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            app:srb_starSize="@dimen/dimen_30"
+            app:srb_starBorderWidth="2.5"
+            app:srb_starCornerRadius="8"
+            app:srb_isIndicator="true"
+            app:srb_stepSize="1"
+            app:srb_fillColor="@color/rating_green"
+            app:srb_rating="1"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintHorizontal_bias=".0"
+            app:srb_borderColor="@color/grey_6B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/ratingbar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

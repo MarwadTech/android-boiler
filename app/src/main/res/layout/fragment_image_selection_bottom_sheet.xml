@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:paddingVertical="10dp"
+        tools:context=".ui.dialogs.ImageSelectionFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cvOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:background="@drawable/bg_options"
+            app:layout_constraintBottom_toTopOf="@+id/btnCancel">
+
+            <Button
+                android:paddingHorizontal="@dimen/dimen_30"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:gravity="start|center_vertical"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_camera_1"
+                app:iconPadding="@dimen/dimen_10"
+                app:iconTint="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/btnTakeAPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="14dp"
+                android:text="@string/take_a_phone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20"
+                app:layout_constraintBottom_toTopOf="@+id/btnImageFromGallery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_marginHorizontal="@dimen/dimen_10"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/btnTakeAPicker" />
+
+            <Button
+                android:paddingHorizontal="@dimen/dimen_30"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:gravity="start|center_vertical"
+                android:textAllCaps="false"
+                app:iconPadding="@dimen/dimen_10"
+                app:icon="@drawable/ic_gallery"
+                app:iconTint="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/btnImageFromGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="14dp"
+                android:text="@string/select_from_gallery"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20"
+                app:layout_constraintBottom_toTopOf="@+id/btnSelectFromFiles"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTakeAPicker" />
+
+            <View
+                android:layout_marginHorizontal="@dimen/dimen_10"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/btnImageFromGallery" />
+
+            <Button
+                android:paddingHorizontal="@dimen/dimen_30"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:gravity="start|center_vertical"
+                android:textAllCaps="false"
+                app:iconPadding="@dimen/dimen_10"
+                app:icon="@drawable/ic_browser"
+                app:iconTint="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/btnSelectFromFiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="14dp"
+                android:text="@string/select_from_files"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnImageFromGallery" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_options"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="@dimen/dimen_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvOptions" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

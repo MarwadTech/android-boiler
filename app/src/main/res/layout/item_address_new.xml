@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_8"
+    app:cardCornerRadius="@dimen/dimen_11"
+    app:cardElevation="@dimen/dimen_1"
+    android:background="@color/transparent"
+    style="@style/CardView">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/percent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_grey_ed_outline">
+
+        <TextView
+            android:id="@+id/txtDefault"
+            style="@style/materialText_medium_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="Default"
+            android:elevation="@dimen/dimen_10"
+            android:visibility="visible"
+            android:paddingVertical="@dimen/dimen_4"
+            android:drawablePadding="@dimen/dimen_5"
+            android:paddingHorizontal="@dimen/dimen_25"
+            app:layout_constraintBottom_toTopOf="@id/txtAddress"
+            android:background="@drawable/shape_bottom_right_rounded_grey"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="wrap_content"
+            style="@style/materialText_medium_16"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtDefault"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:text="@string/address"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toStartOf="@id/txtAddressType"
+            app:layout_constraintBottom_toTopOf="@id/imgAddressType"
+            />
+
+        <TextView
+            android:id="@+id/txtAddressType"
+            android:layout_width="@dimen/dimen_0"
+            style="@style/materialText_medium_12"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/txtAddress"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/grey_81"
+            android:text="(Home)"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/dimen_5"
+            app:layout_constraintEnd_toStartOf="@id/btnEdit"
+            app:layout_constraintTop_toTopOf="@id/txtAddress"
+            app:layout_constraintBottom_toBottomOf="@id/txtAddress"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEdit"
+            style="@style/materialButton"
+            android:layout_width="@dimen/dimen_55"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Edit"
+            android:backgroundTint="@color/grey_d3"
+            android:textSize="@dimen/_11sp"
+            android:textColor="@color/grey_4d"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            app:cornerRadius="@dimen/dimen_8"
+            app:layout_constraintEnd_toStartOf="@id/imgDelete"
+            app:layout_constraintStart_toEndOf="@id/txtAddressType"
+            app:layout_constraintTop_toTopOf="@id/percent" />
+
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_delete_light_orange"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_15"
+            app:layout_constraintStart_toEndOf="@id/btnEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/percent" />
+
+
+        <ImageView
+            android:id="@+id/imgAddressType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_home_new"
+            android:layout_marginEnd="@dimen/dimen_5"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintStart_toStartOf="@id/txtAddress"
+            app:layout_constraintEnd_toStartOf="@id/txtName"
+            app:layout_constraintTop_toBottomOf="@id/txtAddress"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="@dimen/dimen_0"
+            style="@style/materialText_medium_12"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/jane_cooper"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/dimen_1"
+            app:layout_constraintStart_toEndOf="@id/imgAddressType"
+            app:layout_constraintTop_toTopOf="@id/imgAddressType"
+            app:layout_constraintEnd_toEndOf="@id/imgDelete"
+            app:layout_constraintBottom_toTopOf="@id/txtMobileNumber"
+            />
+
+        <TextView
+            android:id="@+id/txtMobileNumber"
+            android:layout_width="@dimen/dimen_0"
+            style="@style/materialText_medium_12"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="(603) 555-0123"
+            android:textColor="@color/grey_81"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@id/imgDelete"
+            app:layout_constraintTop_toBottomOf="@id/txtName"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            app:layout_constraintBottom_toTopOf="@id/txtCityArea"
+            />
+
+
+        <TextView
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCityArea"
+            android:text="@string/saint_vincent_and_the_grenadines"
+            android:maxLines="2"
+            android:layout_marginBottom="@dimen/dimen_10"
+            style="@style/materialText_medium_12"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:textColor="@color/grey_81"
+            app:layout_constraintTop_toBottomOf="@id/txtMobileNumber"
+            app:layout_constraintStart_toStartOf="@id/txtName"
+            app:layout_constraintEnd_toEndOf="@id/imgDelete"
+            app:layout_constraintBottom_toTopOf="@id/btnDefault"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDefault"
+            style="@style/materialButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/make_default"
+            app:cornerRadius="@dimen/dimen_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCityArea" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

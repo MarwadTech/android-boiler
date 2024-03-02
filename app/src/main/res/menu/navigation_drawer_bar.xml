@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_user"
         android:checkable="true"
         android:title="@string/profile" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:checkable="false"
+        android:title="@string/log_out" />
 </menu>

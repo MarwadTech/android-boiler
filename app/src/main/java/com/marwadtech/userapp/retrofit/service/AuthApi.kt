@@ -2,9 +2,12 @@ package com.marwadtech.userapp.retrofit.service
 
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
+import com.marwadtech.userapp.retrofit.models.response.CommonDataResponseModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
+import com.marwadtech.userapp.retrofit.models.response.UserResponseModel
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthApi {
@@ -31,4 +34,7 @@ interface AuthApi {
 
     @POST("auth/reset-password")
     suspend fun resetPassword(@Body userRequestModel: UserRequestModel):Response<BaseModel<UserAuthResponseModel>>
+
+    @GET("commondata")
+    suspend fun getCommonData(): Response<BaseModel<ArrayList<CommonDataResponseModel>>>
 }

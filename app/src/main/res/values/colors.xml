@@ -12,6 +12,7 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="sub_text_grey">#898A8D</color>
 
     <color name="purple">#6A1B9A</color>
     <color name="light_purple">#7E57C2</color>
@@ -61,6 +62,11 @@
 
 
     <color name="red_new">#ff5242</color>
+    <color name="rating_rad">#E13B23</color>
+    <color name="rating_light_green">#A5D531</color>
+    <color name="rating_yellow">#F7E53A</color>
+    <color name="rating_gold">#FFB400</color>
+    <color name="rating_greens">#10B114</color>
     <color name="blue_new">#5242ff</color>
     <color name="orange_new">#dc6e15</color>
     <color name="green_new">#00C957</color>
@@ -463,7 +469,7 @@
     <color name="rating_card_bg">#EAEBEC</color>
     <color name="accent">#5568FE</color>
     <color name="blueButtons">#586BF5</color>
-    <color name="backgroundLightGrey">#F5F5F5</color>
+    <color name="backgroundLightGrey">#F8F9FB</color>
     <color name="semiBlack">#B32B3240</color>
     <color name="colorPrimary_60">#995568FE</color>
     <color name="quickOfferColor">#586BF5</color>
@@ -556,5 +562,30 @@
     <color name="grey_4d">#4D4D4D</color>
     <color name="grey_d0">#D0D5DD</color>
     <color name="grey_e6">#E6E6E6</color>
+    <color name="grey_a5acb8">#a5acb8</color>
+    <color name="green_accept">#36CE00</color>
+    <color name="gold">#F9B233</color>
+    <color name="grey_f5">#f5f5f5</color>
+    <color name="light_orange">#ED4D31</color>
+    <color name="grey_97">#979797</color>
+    <color name="grey_ed">#EDEDED</color>
+    <color name="grey_d3">#d3d3d3</color>
+    <color name="green_light_dark">#28A51E</color>
+    <color name="green_31BB00">#31BB00</color>
+    <color name="green_31BB00_10">#2632BA00</color>
+    <color name="grey_8b">#8b8b8b</color>
+    <color name="grey_d1">#d1d1d1</color>
+    <color name="grey_54">#545454</color>
+    <color name="lightest_green">#00DAB3</color>
+    <color name="grey_5e5f60">#5E5F60</color>
+    <color name="fdebe8">#FDEBE8</color>
+    <color name="rating_mango">#F0742E</color>
+    <color name="white_fo">#f0f0f0</color>
+    <color name="black_1e">#1e1e1e</color>
+    <color name="blue_10">#1A007BFF</color>
+    <color name="black_grey">#3D4260</color>
+    <color name="grey_78858f">#78858F</color>
+    <color name="green_00aa5b">#00AA5B</color>
+    <color name="green_36B37E_20">#3336B37E</color>
 
 </resources>

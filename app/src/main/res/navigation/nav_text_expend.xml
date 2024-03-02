@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedTextExpend"
+    app:startDestination="@id/textExpendFragment">
+    <dialog
+        android:id="@+id/textExpendFragment"
+        android:name="com.marwadtech.userapp.common.TextExpendBottomSheetFragment"
+        android:label="fragment_text_expend"
+        tools:layout="@layout/fragment_text_expend_bottom_sheet">
+        <argument
+            android:name="fullText"
+            app:argType="string"
+            app:nullable="true"/>
+    </dialog>
+</navigation>

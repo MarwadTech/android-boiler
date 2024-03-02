@@ -8,7 +8,7 @@ data class PaginationRequestModel(
     var order: JsonObject? = null,
     var search: String? = null,
     var id: String? = null,
-    var orderId: String,
+    var orderId: String? = null,
     var takenBy: String? = null,
     var isRead: Boolean? = null,
     var value: Int? = null,

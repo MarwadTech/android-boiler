@@ -15,7 +15,9 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.location.LocationManagerCompat
+import com.marwadtech.userapp.ui.auth.AuthActivity
 import com.marwadtech.userapp.utils.FilePathUtils.Companion.showToast
+import com.onesignal.OneSignal
 
 fun isLocationEnabled(context: Context): Boolean {
     val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -75,4 +77,13 @@ fun formatAndSetClickableText(
     } else {
         textView.text = description
     }
+}
+
+fun logout(context: Context,spUtils : SpUtils){
+    spUtils.logout()
+    OneSignal.logout()
+    val intent = Intent(context, AuthActivity::class.java)
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    context.startActivity(intent)
 }

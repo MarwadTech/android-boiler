@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:paddingTop="@dimen/dimen_12"
+    tools:context=".common.ReportBottomSheetFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_bg"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dimen_10">
+
+            <TextView
+                android:id="@+id/txtReportIssue"
+                style="@style/materialText_medium_22"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="center|center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/report_an_issue"
+                android:textAllCaps="true"
+                android:textColor="@color/mango_orange"
+                android:textSize="@dimen/_24sp"
+                app:layout_constraintBottom_toTopOf="@id/txtReportIssueDescription"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+            <TextView
+                android:id="@+id/txtReportIssueDescription"
+                style="@style/materialText_medium_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_15"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dimen_20"
+                android:text="@string/reason_issue_description"
+                android:textColor="@color/sub_text_grey"
+                app:layout_constraintBottom_toTopOf="@id/rgReportIssueSelector"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtReportIssue" />
+
+
+            <RadioGroup
+                android:id="@+id/rgReportIssueSelector"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_25"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/edtOtherReason"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@+id/txtReportIssueDescription">
+
+
+                <RadioButton
+                    android:id="@+id/rbTechnicalIssue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableStart="@drawable/radio_selector_grey_66_to_mango_orange"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/technical_issues"
+                    android:textColor="@color/primary_gray_selector"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/_16sp" />
+
+
+                <RadioButton
+                    android:id="@+id/rbServiceQuality"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableStart="@drawable/radio_selector_grey_66_to_mango_orange"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/service_quality"
+                    android:textColor="@color/primary_gray_selector"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/_16sp" />
+
+
+                <RadioButton
+                    android:id="@+id/rbUserExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableStart="@drawable/radio_selector_grey_66_to_mango_orange"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/user_experience"
+                    android:textColor="@color/primary_gray_selector"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/_16sp" />
+
+
+                <RadioButton
+                    android:id="@+id/rbOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableStart="@drawable/radio_selector_grey_66_to_mango_orange"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:focusable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/other"
+                    android:textColor="@color/primary_gray_selector"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/_16sp" />
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/edtOtherReason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rounded_outline_grey_d0d5dd_8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="top"
+                android:hint="@string/enter_a_reason"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxHeight="@dimen/dimen_160"
+                android:maxLength="250"
+                android:maxLines="9"
+                android:minHeight="@dimen/dimen_120"
+                android:paddingHorizontal="@dimen/dimen_15"
+                android:paddingVertical="@dimen/dimen_10"
+                android:textColor="@color/light_purple"
+                android:textColorHint="@color/light_purple"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@id/btnReport"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/rgReportIssueSelector" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReport"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_25"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/report"
+                android:textSize="@dimen/_14sp"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/btnCancel"
+                app:layout_constraintTop_toBottomOf="@id/edtOtherReason" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/materialButton.outlined"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/cancel"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_14sp"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintBottom_toBottomOf="@id/btnReport"
+                app:layout_constraintEnd_toStartOf="@id/btnReport"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="@id/btnReport"
+                app:strokeColor="@color/gray" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_20" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_20" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

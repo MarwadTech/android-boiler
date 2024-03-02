@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
+import com.marwadtech.userapp.retrofit.models.response.CommonDataResponseModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
 import com.marwadtech.userapp.retrofit.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -113,5 +114,15 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    private val _getCommonData = MutableLiveData<BaseModel<ArrayList<CommonDataResponseModel>>>()
+    val getCommonData: LiveData<BaseModel<ArrayList<CommonDataResponseModel>>>
+        get() = _getCommonData
 
+    fun getCommonData() {
+        viewModelScope.launch {
+            _getCommonData.value = BaseModel.loading()
+            _getCommonData.value = authRepository.getCommonData()
+            _getCommonData.value = BaseModel.clear()
+        }
+    }
 }

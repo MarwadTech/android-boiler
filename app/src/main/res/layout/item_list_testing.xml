@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtService"
+            style="@style/materialText_medium_16"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+            android:includeFontPadding="false"
+            android:text="name"
+            app:layout_constraintBottom_toTopOf="@id/viewLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <View
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_2"
+        android:id="@+id/viewLine"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:background="@drawable/shape_account_grey"
+        app:layout_constraintTop_toBottomOf="@id/txtService"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/dimen_5"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

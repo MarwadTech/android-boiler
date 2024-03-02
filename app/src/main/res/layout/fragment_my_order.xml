@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screens.profile.MyOrderFragment">
+
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_45"
+        android:layout_marginEnd="@dimen/dimen_10"
+        android:background="@drawable/shape_rounded_outline_gray_d9_4dp"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/dimen_10"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:gravity="center|start"
+        android:hint="@string/search_orders"
+        android:imeOptions="actionSearch"
+        android:elevation="@dimen/dimen_2"
+        android:inputType="textCapWords"
+        android:paddingHorizontal="@dimen/dimen_10"
+        android:textColorHint="@color/text_grey"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toTopOf="@id/rvOrders"
+        app:layout_constraintEnd_toStartOf="@+id/txtFilter"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFilter"
+        app:layout_constraintBottom_toBottomOf="@id/edtSearch"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toEndOf="@id/edtSearch"
+        app:layout_constraintTop_toTopOf="@id/edtSearch"
+        android:text="@string/filter"
+        android:background="?selectableItemBackground"
+        android:textColor="@color/grey_66"
+        android:padding="@dimen/dimen_8"
+        android:drawablePadding="@dimen/dimen_5"
+        android:drawableStart="@drawable/filter_selector"
+        style="@style/materialText_medium_18"/>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOrders"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:paddingTop="@dimen/dimen_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
+        tools:itemCount="5"
+        android:layout_marginTop="@dimen/dimen_10"
+        tools:listitem="@layout/item_order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glRight"
+        app:layout_constraintStart_toStartOf="@id/glLeft"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch"/>
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/txtOrderConfirmed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgOrderConfirm"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_10"
+        style="@style/materialText_Semi_Bold_14"
+        app:layout_constraintBottom_toBottomOf="@id/viewCenterOrderConfirm"
+        android:textColor="@color/text_grey_green_checkable"
+        android:text="@string/order_confirmed_s"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarOrderConfirmed"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/dimen_2"
+        android:layout_height="@dimen/dimen_55"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/vertical_progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/viewCenterOrderConfirm"
+        app:layout_constraintStart_toStartOf="@+id/viewCenterOrderConfirm"
+        app:layout_constraintTop_toTopOf="@+id/viewCenterOrderConfirm" />
+
+    <ImageView
+        android:id="@+id/imgOrderConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selector_checkmark"
+        app:layout_constraintBottom_toBottomOf="@+id/txtOrderConfirmed"
+        app:layout_constraintEnd_toStartOf="@id/txtOrderConfirmed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtOrderConfirmed" />
+
+    <View
+        android:id="@+id/viewCenterOrderConfirm"
+        android:layout_width="@dimen/dimen_1"
+        android:layout_height="@dimen/dimen_1"
+        app:layout_constraintBottom_toBottomOf="@+id/imgOrderConfirm"
+        app:layout_constraintEnd_toEndOf="@+id/imgOrderConfirm"
+        app:layout_constraintStart_toStartOf="@+id/imgOrderConfirm"
+        app:layout_constraintTop_toTopOf="@+id/imgOrderConfirm" />
+
+
+    <View
+        android:id="@+id/viewCenterShipped"
+        android:layout_width="@dimen/dimen_1"
+        android:layout_height="@dimen/dimen_1"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarOrderConfirmed"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarOrderConfirmed"
+        app:layout_constraintStart_toStartOf="@+id/progressBarOrderConfirmed"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarOrderConfirmed" />
+
+
+    <TextView
+        android:id="@+id/txtShipped"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterShipped"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgCheckmarkShipped"
+        app:layout_constraintTop_toTopOf="@id/viewCenterShipped"
+        style="@style/materialText_regular_14"
+        android:textColor="@color/text_grey_green_checkable"
+        android:text="@string/shipped_s"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarShipped"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/dimen_2"
+        android:layout_height="@dimen/dimen_55"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/vertical_progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/viewCenterShipped"
+        app:layout_constraintStart_toStartOf="@+id/viewCenterShipped"
+        app:layout_constraintTop_toTopOf="@+id/viewCenterShipped" />
+
+    <ImageView
+        android:id="@+id/imgCheckmarkShipped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selector_checkmark"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterShipped"
+        app:layout_constraintEnd_toEndOf="@id/viewCenterShipped"
+        app:layout_constraintStart_toStartOf="@id/viewCenterShipped"
+        app:layout_constraintTop_toTopOf="@id/viewCenterShipped" />
+
+
+    <View
+        android:id="@+id/viewCenterOutForDelivery"
+        android:layout_width="@dimen/dimen_1"
+        android:layout_height="@dimen/dimen_1"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarShipped"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarShipped"
+        app:layout_constraintStart_toStartOf="@+id/progressBarShipped"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarShipped" />
+
+
+
+
+    <TextView
+        android:id="@+id/txtOutForDelivery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterOutForDelivery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgCheckmarkOutForDelivery"
+        app:layout_constraintTop_toTopOf="@id/viewCenterOutForDelivery"
+        style="@style/materialText_regular_14"
+        android:textColor="@color/text_grey_green_checkable"
+        android:text="@string/out_for_delivery_s"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarOutForDelivery"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/dimen_2"
+        android:layout_height="@dimen/dimen_55"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/vertical_progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/viewCenterOutForDelivery"
+        app:layout_constraintStart_toStartOf="@+id/viewCenterOutForDelivery"
+        app:layout_constraintTop_toTopOf="@+id/viewCenterOutForDelivery" />
+
+    <ImageView
+        android:id="@+id/imgCheckmarkOutForDelivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selector_checkmark"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterOutForDelivery"
+        app:layout_constraintEnd_toEndOf="@id/viewCenterOutForDelivery"
+        app:layout_constraintStart_toStartOf="@id/viewCenterOutForDelivery"
+        app:layout_constraintTop_toTopOf="@id/viewCenterOutForDelivery" />
+
+    <View
+        android:id="@+id/viewCenterDelivered"
+        android:layout_width="@dimen/dimen_1"
+        android:layout_height="@dimen/dimen_1"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarOutForDelivery"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarOutForDelivery"
+        app:layout_constraintStart_toStartOf="@+id/progressBarOutForDelivery"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarOutForDelivery" />
+
+
+    <TextView
+        android:id="@+id/txtDelivered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterDelivered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgCheckmarkDelivered"
+        app:layout_constraintTop_toTopOf="@id/viewCenterDelivered"
+        style="@style/materialText_regular_14"
+        android:textColor="@color/text_grey_green_checkable"
+        android:text="@string/delivered_s"/>
+
+    <ImageView
+        android:id="@+id/imgCheckmarkDelivered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selector_checkmark"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCenterDelivered"
+        app:layout_constraintEnd_toEndOf="@id/viewCenterDelivered"
+        app:layout_constraintStart_toStartOf="@id/viewCenterDelivered"
+        app:layout_constraintTop_toTopOf="@id/viewCenterDelivered" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

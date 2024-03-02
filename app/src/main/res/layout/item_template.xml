@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_5"
+    android:background="@color/white"
+    android:padding="@dimen/dimen_1"
+    app:cardCornerRadius="@dimen/dimen_8"
+    app:cardElevation="@dimen/dimen_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_12">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dimen_5"
+            android:padding="@dimen/dimen_5"
+            android:src="@drawable/selector_like"
+            app:layout_constraintEnd_toEndOf="@id/imgTemplate"
+            app:layout_constraintTop_toTopOf="@id/imgTemplate" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgTemplate"
+            android:layout_width="@dimen/dimen_155"
+            android:layout_height="@dimen/dimen_125"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_pic1"
+            app:layout_constraintBottom_toTopOf="@id/txtTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.ImageView" />
+
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/materialText_medium_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/title"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/btnBuyNow"
+            app:layout_constraintEnd_toStartOf="@id/txtPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgTemplate" />
+
+
+        <TextView
+            android:id="@+id/txtPrice"
+            style="@style/materialText_Semi_Bold_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:text="@string/_299"
+            android:textColor="@color/light_orange"
+            app:layout_constraintBottom_toBottomOf="@id/txtTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtTitle"
+            app:layout_constraintTop_toTopOf="@id/txtTitle" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBuyNow"
+            style="@style/materialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_35"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:backgroundTint="@color/green_light_dark"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/buy_now"
+            android:textSize="@dimen/_12sp"
+            app:cornerRadius="@dimen/dimen_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

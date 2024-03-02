@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screens.profile.DeliveryAddressFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/txtFullName"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="start"
+                android:text="@string/full_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtFullName"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/edtFullName"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_5"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_name"
+                android:inputType="text"
+                android:maxLength="30"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtContactNumber"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtFullName" />
+
+
+            <TextView
+                android:id="@+id/txtContactNumber"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="start"
+                android:text="@string/contact_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtContactNumber"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtFullName" />
+
+
+            <EditText
+                android:id="@+id/edtContactNumber"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_5"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:digits="0123456789"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtPincode"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtContactNumber" />
+
+
+            <TextView
+                android:id="@+id/txtPincode"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="start"
+                android:text="@string/pincode"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtPincode"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtContactNumber" />
+
+
+            <EditText
+                android:id="@+id/edtPincode"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:digits="0123456789"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_pincode"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtState"
+                app:layout_constraintEnd_toStartOf="@id/btnLocation"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtPincode" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLocation"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:backgroundTint="@color/green_00aa5b"
+                android:drawableEnd="@drawable/ic_my_location_white"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center|center_vertical"
+                android:paddingStart="@dimen/dimen_15"
+                android:paddingEnd="@dimen/dimen_15"
+                android:text="@string/use_current_location"
+                android:textSize="@dimen/_11sp"
+                app:cornerRadius="@dimen/dimen_11"
+                app:layout_constraintBottom_toBottomOf="@id/edtPincode"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/edtPincode"
+                app:layout_constraintTop_toTopOf="@id/edtPincode" />
+
+
+            <TextView
+                android:id="@+id/txtState"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:gravity="start"
+                android:text="@string/state"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtState"
+                app:layout_constraintEnd_toStartOf="@id/txtCity"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtPincode" />
+
+
+            <EditText
+                android:id="@+id/edtState"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/dimen_7"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_state"
+                android:inputType="text"
+                android:maxLength="25"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtHouse"
+                app:layout_constraintEnd_toStartOf="@id/edtCity"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtState" />
+
+            <TextView
+                android:id="@+id/txtCity"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:gravity="start"
+                android:text="@string/city"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtCity"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/txtState"
+                app:layout_constraintTop_toTopOf="@id/txtState"
+                app:layout_constraintVertical_bias=".0" />
+
+
+            <EditText
+                android:id="@+id/edtCity"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_city"
+                android:inputType="text"
+                android:maxLength="25"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toBottomOf="@id/edtState"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toEndOf="@id/edtState"
+                app:layout_constraintTop_toTopOf="@id/edtState" />
+
+
+            <TextView
+                android:id="@+id/txtHouse"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="start"
+                android:text="@string/house_no_building_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/edtHouse"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtState" />
+
+
+            <EditText
+                android:id="@+id/edtHouse"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginVertical="@dimen/dimen_5"
+                android:background="@drawable/shape_rounded_gray_f3_10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_house_no_building"
+                android:inputType="text"
+                android:maxLength="80"
+                android:padding="@dimen/dimen_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_78858f"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toTopOf="@id/txtCategory"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/txtHouse" />
+
+
+            <TextView
+                android:id="@+id/txtCategory"
+                style="@style/materialText_Semi_Bold_12"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="start"
+                android:text="@string/category"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sp"
+                app:layout_constraintBottom_toTopOf="@id/rgCategory"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/edtHouse" />
+
+
+            <RadioGroup
+                android:id="@+id/rgCategory"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_25"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@+id/txtCategory">
+
+
+                <RadioButton
+                    android:id="@+id/rbHome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/address_type_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/home"
+                    android:textColor="@color/text_grey_white_checkable"
+                    android:textSize="@dimen/_16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbOffice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/address_type_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingVertical="@dimen/dimen_10"
+                    android:text="@string/office"
+                    android:textColor="@color/text_grey_white_checkable"
+                    android:textSize="@dimen/_16sp" />
+
+
+            </RadioGroup>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/materialButton"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_60"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:backgroundTint="@color/light_orange"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/save"
+                android:textSize="@dimen/_16sp"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/glRight"
+                app:layout_constraintStart_toStartOf="@id/glLeft"
+                app:layout_constraintTop_toBottomOf="@id/rgCategory"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

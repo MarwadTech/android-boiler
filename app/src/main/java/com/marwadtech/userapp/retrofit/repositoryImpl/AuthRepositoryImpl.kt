@@ -3,6 +3,7 @@ package com.marwadtech.userapp.retrofit.repositoryImpl
 import android.app.Application
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
+import com.marwadtech.userapp.retrofit.models.response.CommonDataResponseModel
 import com.marwadtech.userapp.retrofit.models.response.UserAuthResponseModel
 import com.marwadtech.userapp.retrofit.repository.AuthRepository
 import com.marwadtech.userapp.retrofit.service.AuthApi
@@ -41,6 +42,10 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun resetPassword(userRequestModel: UserRequestModel): BaseModel<UserAuthResponseModel> {
         return handleResponse(handleRequest(app){authApi.resetPassword(userRequestModel)})
+    }
+
+    override suspend fun getCommonData(): BaseModel<ArrayList<CommonDataResponseModel>> {
+        return handleResponse(handleRequest(app){authApi.getCommonData()})
     }
 
 }

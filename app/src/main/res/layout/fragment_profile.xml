@@ -1,15 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.ProfileFragment">
+    android:layout_height="wrap_content"
+    tools:context=".ui.screens.profile.ProfileFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile"
-        android:gravity="center"
-        />
 
-</FrameLayout>
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundLightGrey">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="@dimen/dimen_96"
+                    android:layout_height="@dimen/dimen_0"
+                    android:layout_marginEnd="@dimen/dimen_15"
+                    android:padding="@dimen/dimen_2"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_pic1"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@id/txtFinderName"
+                    app:layout_constraintStart_toStartOf="@id/glLeft"
+                    app:layout_constraintTop_toTopOf="@id/txtFinderName"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView_circle"
+                    app:strokeColor="@color/light_purple"
+                    app:strokeWidth="@dimen/dimen_4" />
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_15"
+                    android:layout_marginEnd="@dimen/dimen_15"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
+                    app:layout_constraintEnd_toEndOf="@+id/imgProfile" />
+
+                <ImageView
+                    android:id="@+id/imgCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/dimen_15"
+                    android:src="@drawable/ic_camera_orange"
+                    app:layout_constraintBottom_toBottomOf="@id/space"
+                    app:layout_constraintEnd_toEndOf="@id/space"
+                    app:layout_constraintStart_toStartOf="@+id/space"
+                    app:layout_constraintTop_toTopOf="@+id/space" />
+
+
+                <TextView
+                    android:id="@+id/txtFinderName"
+                    style="@style/materialText_medium_16"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@id/txtMobileNumber"
+                    app:layout_constraintEnd_toEndOf="@id/glRight"
+                    app:layout_constraintStart_toEndOf="@+id/imgProfile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/txtMobileNumber"
+                    style="@style/materialText_medium_12"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:drawableStart="@drawable/ic_call"
+                    android:drawablePadding="@dimen/dimen_5"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/number"
+                    android:textColor="@color/grey_6B"
+                    android:textSize="@dimen/_11sp"
+                    app:layout_constraintBottom_toTopOf="@id/txtLocation"
+                    app:layout_constraintEnd_toEndOf="@id/glRight"
+                    app:layout_constraintStart_toStartOf="@id/txtFinderName"
+                    app:layout_constraintTop_toBottomOf="@id/txtFinderName"
+                    app:layout_constraintVertical_bias=".0" />
+
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    style="@style/materialText_medium_12"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:drawableStart="@drawable/ic_location_green"
+                    android:drawablePadding="@dimen/dimen_5"
+                    android:gravity="top"
+                    android:text="Pali, Rajasthan"
+                    android:textColor="@color/grey_6B"
+                    android:textSize="@dimen/_11sp"
+                    app:layout_constraintBottom_toTopOf="@id/ratingbar"
+                    app:layout_constraintEnd_toEndOf="@id/glRight"
+                    app:layout_constraintStart_toStartOf="@id/txtFinderName"
+                    app:layout_constraintTop_toBottomOf="@id/txtMobileNumber"
+                    app:layout_constraintVertical_bias=".0" />
+
+
+                <com.marwadtech.userapp.utils.SimpleRatingBar
+                    android:id="@+id/ratingbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:keyboardNavigationCluster="false"
+                    android:numStars="5"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+                    app:layout_constraintEnd_toStartOf="@id/txtRatingCount"
+                    app:layout_constraintStart_toStartOf="@id/txtFinderName"
+                    app:layout_constraintTop_toBottomOf="@id/txtLocation"
+                    app:srb_borderColor="@color/gold"
+                    app:srb_fillColor="@color/gold"
+                    app:srb_isIndicator="true"
+                    app:srb_pressedBorderColor="@color/gold"
+                    app:srb_rating="4.5"
+                    app:srb_starBorderWidth="2"
+                    app:srb_starCornerRadius="12"
+                    app:srb_starSize="@dimen/dimen_15" />
+
+
+                <TextView
+                    android:id="@+id/txtRatingCount"
+                    style="@style/materialText_medium_12"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_5"
+                    android:gravity="start|center_vertical"
+                    android:text="(3.3)"
+                    android:textColor="@color/grey_6B"
+                    android:textSize="@dimen/_11sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@id/ratingbar"
+                    app:layout_constraintStart_toEndOf="@id/ratingbar"
+                    app:layout_constraintTop_toTopOf="@id/ratingbar"
+                    app:layout_constraintVertical_bias=".0" />
+
+                <TextView
+                    android:id="@+id/txtAccountSettings"
+                    style="@style/materialText_medium_16"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:background="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/dimen_25"
+                    android:paddingVertical="@dimen/dimen_18"
+                    android:text="@string/account_settings"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_26"
+                    app:layout_constraintBottom_toTopOf="@id/rvAccountSettingOption"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgProfile"
+                    app:layout_goneMarginTop="@dimen/dimen_30" />
+
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/txtSwitchAccount"-->
+                <!--                    style="@style/materialText_medium_12"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:background="@drawable/shape_circle_outline_light_purple_medium"-->
+                <!--                    android:drawableStart="@drawable/ic_provider_16"-->
+                <!--                    android:drawablePadding="@dimen/dimen_6"-->
+                <!--                    android:gravity="center_vertical"-->
+                <!--                    android:includeFontPadding="false"-->
+                <!--                    android:paddingHorizontal="@dimen/dimen_10"-->
+                <!--                    android:paddingVertical="@dimen/dimen_8"-->
+                <!--                    android:text="@string/switch_to_provider"-->
+                <!--                    android:textAllCaps="true"-->
+                <!--                    android:textColor="@color/mango_orange"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@id/txtAccountSettings"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@id/glRight"-->
+                <!--                    app:layout_constraintTop_toTopOf="@id/txtAccountSettings" />-->
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAccountSettingOption"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:elevation="@dimen/dimen_2"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/txtAboutApp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtAccountSettings"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/item_profile_option" />
+
+
+                <TextView
+                    android:id="@+id/txtAboutApp"
+                    style="@style/materialText_medium_16"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/dimen_25"
+                    android:paddingVertical="@dimen/dimen_18"
+                    android:text="About App"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_26"
+                    app:layout_constraintBottom_toTopOf="@id/rvAboutAppOption"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvAccountSettingOption" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAboutAppOption"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:elevation="@dimen/dimen_2"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/txtDangerZone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtAboutApp"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_profile_option" />
+
+
+                <TextView
+                    android:id="@+id/txtDangerZone"
+                    style="@style/materialText_medium_16"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="@dimen/dimen_25"
+                    android:paddingVertical="@dimen/dimen_18"
+                    android:text="@string/danger_zone"
+                    android:textAllCaps="true"
+                    android:textColor="@color/mango_orange"
+                    app:layout_constraintBottom_toTopOf="@id/rvDangerZoneOption"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvAboutAppOption" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDangerZoneOption"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:elevation="@dimen/dimen_2"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/txtVersionName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtDangerZone"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_profile_option" />
+
+
+                <TextView
+                    android:id="@+id/txtVersionName"
+                    style="@style/materialText_medium_16"
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dimen_25"
+                    android:gravity="center|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLength="30"
+                    android:maxLines="2"
+                    android:overScrollMode="never"
+                    android:text="V 01.2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/glRight"
+                    app:layout_constraintStart_toStartOf="@id/glLeft"
+                    app:layout_constraintTop_toBottomOf="@id/rvDangerZoneOption" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dimen_15" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dimen_15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--            android:id="@+id/shimmerView"-->
+<!--            android:layout_width="@dimen/dimen_0"-->
+<!--            android:layout_height="@dimen/dimen_0"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <include layout="@layout/item_finder_profile_shimmer" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_dashboard"
     app:startDestination="@id/navigate_home">
-
+    <include app:graph="@navigation/profile" />
+    <action
+        android:id="@+id/action_global_imageSelectionFragment"
+        app:destination="@id/navGraphImageSelection"/>
+    <action
+        android:id="@+id/action_global_navGraphInternet"
+        app:destination="@id/navGraphInternet" />
     <fragment
         android:id="@+id/navigate_home"
-        android:name="com.marwadtech.userapp.ui.DashboardFragment"
+        android:name="com.marwadtech.userapp.ui.screens.home.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/navigate_profile"
-        android:name="com.marwadtech.userapp.ui.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
         android:id="@+id/navigate_notification"
-        android:name="com.marwadtech.userapp.ui.NotificationFragment"
+        android:name="com.marwadtech.userapp.ui.screens.notification.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 </navigation>

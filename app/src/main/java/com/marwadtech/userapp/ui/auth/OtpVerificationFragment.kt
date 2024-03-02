@@ -210,7 +210,7 @@ class OtpVerificationFragment : BaseFragment() {
                         } else if (otpVerificationType == OtpType.verifyEmail) {
                             viewModel.registerWithOtp(
                                 UserRequestModel(
-                                    fullName = args.userData?.fullName,
+                                    name = args.userData?.name,
                                     phoneNumber = args.userData?.phoneNumber,
                                     email = args.userData?.email,
                                     phoneOtp = phoneOtp,
