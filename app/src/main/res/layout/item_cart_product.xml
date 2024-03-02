@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_12"
+    app:cardCornerRadius="@dimen/dimen_10"
+    android:elevation="@dimen/dimen_0"
+    app:cardElevation="@dimen/dimen_0"
+    style="@style/CardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen_15"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dimen_68"
+            android:layout_height="@dimen/dimen_68"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/user_pic2"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/dimen_15"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.ImageView"
+            android:id="@+id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/lytCounter"
+            app:layout_constraintEnd_toStartOf="@id/txtOrderTitle"/>
+
+
+        <TextView
+            android:id="@+id/txtOrderTitle"
+            style="@style/materialText_Semi_Bold_14"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_marginStart="@dimen/dimen_10"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/order_title"
+            android:elevation="@dimen/dimen_2"
+            app:layout_constraintStart_toEndOf="@id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/ratingbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="@id/imgProduct"
+            android:textColor="@color/black_26"/>
+
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="@dimen/dimen_0"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/txtOrderId"-->
+<!--            android:text="@string/order_id_od1256nm458"-->
+<!--            android:maxLines="1"-->
+<!--            style="@style/materialText_regular_12"-->
+<!--            android:textColor="@color/text_grey"-->
+<!--            android:layout_marginTop="@dimen/dimen_8"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/imgRightArrow"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/imgProduct"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtOrderTitle"-->
+<!--            app:layout_constraintStart_toStartOf="@id/txtOrderTitle"-->
+<!--            />-->
+
+
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/imgRightArrow"-->
+<!--            android:padding="@dimen/dimen_8"-->
+<!--            android:background="?selectableItemBackgroundBorderless"-->
+<!--            app:layout_constraintTop_toTopOf="@id/txtOrderId"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/txtOrderId"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/txtOrderId"-->
+<!--            android:src="@drawable/ic_right_arrow_grey"/>-->
+
+
+        <com.marwadtech.userapp.utils.SimpleRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txtOrderTitle"
+            app:layout_constraintStart_toStartOf="@id/txtOrderTitle"
+            app:srb_starSize="@dimen/dimen_20"
+            app:srb_starBorderWidth="2"
+            app:srb_starCornerRadius="5"
+            app:srb_isIndicator="true"
+            app:srb_stepSize="1"
+            app:srb_fillColor="@color/rating_green"
+            app:srb_rating="1"
+            android:layout_marginTop="@dimen/dimen_5"
+            app:layout_constraintHorizontal_bias=".0"
+            app:srb_borderColor="@color/grey_6B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/imgProduct"
+            android:id="@+id/ratingbar"/>
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/item_card_quantity"
+            android:id="@+id/lytCounter"
+            app:layout_constraintEnd_toStartOf="@id/txtMRP"
+            app:layout_constraintTop_toBottomOf="@id/imgProduct"
+            app:layout_constraintStart_toStartOf="@id/imgProduct"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_marginBottom="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@id/txtDeliveryTime"/>
+
+
+        <TextView
+            android:id="@+id/txtMRP"
+            style="@style/materialText_regular_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/dimen_8"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="₹499"
+            android:foreground="@drawable/strikethrough_line"
+            android:gravity="start|center_vertical"
+            app:layout_constraintEnd_toStartOf="@id/txtPrice"
+            app:layout_constraintStart_toEndOf="@id/lytCounter"
+            app:layout_constraintBottom_toBottomOf="@id/lytCounter"
+            app:layout_constraintTop_toTopOf="@id/lytCounter"
+            android:textAllCaps="true"
+            android:textColor="@color/grey_8b"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            style="@style/materialText_Semi_Bold_14"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/dimen_8"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="₹499"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:gravity="start|center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtMRP"
+            app:layout_constraintBottom_toBottomOf="@id/lytCounter"
+            app:layout_constraintTop_toTopOf="@id/lytCounter"
+            android:textAllCaps="true"
+            android:textColor="@color/light_orange"/>
+
+
+        <TextView
+            android:id="@+id/txtDeliveryTime"
+            style="@style/materialText_Semi_Bold_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginVertical="@dimen/dimen_5"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/delivery_by_sun_jun_29_2024"
+            android:gravity="start|center_vertical"
+            android:paddingVertical="@dimen/dimen_5"
+            android:layout_marginEnd="@dimen/dimen_15"
+            app:layout_constraintStart_toStartOf="@id/imgProduct"
+            app:layout_constraintBottom_toTopOf="@id/viewDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lytCounter"
+            android:textAllCaps="true"
+            android:textColor="@color/grey_8b"/>
+
+
+
+
+        <View
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_1"
+            android:id="@+id/viewDivider"
+            android:background="@color/grey_e6"
+            android:layout_marginTop="@dimen/dimen_10"
+            app:layout_constraintTop_toBottomOf="@id/txtDeliveryTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txtDelete"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/txtDelete"
+            style="@style/materialText_Semi_Bold_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/delete"
+            android:gravity="center|center_vertical"
+            android:paddingVertical="@dimen/dimen_12"
+            android:background="?selectableItemBackground"
+            android:textSize="@dimen/_11sp"
+            android:textAllCaps="true"
+            android:paddingHorizontal="@dimen/dimen_50"
+            android:drawablePadding="@dimen/dimen_10"
+            android:drawableStart="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtDeleteValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDivider"
+            android:textColor="@color/light_orange"/>
+
+
+
+
+        <View
+            android:layout_width="@dimen/dimen_1"
+            android:layout_height="@dimen/dimen_0"
+            android:id="@+id/viewVerticalDivider"
+            android:background="@color/grey_e6"
+            app:layout_constraintStart_toEndOf="@id/txtDelete"
+            app:layout_constraintTop_toBottomOf="@id/viewDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtDeleteValue"/>
+
+
+
+        <TextView
+            android:id="@+id/txtDeleteValue"
+            style="@style/materialText_Semi_Bold_12"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="@string/save_for_later"
+            android:gravity="center|center_vertical"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/ic_archive_grey"
+            android:paddingVertical="@dimen/dimen_12"
+            android:paddingHorizontal="@dimen/dimen_50"
+            android:textSize="@dimen/_11sp"
+            android:textAllCaps="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtDelete"
+            app:layout_constraintBottom_toBottomOf="@id/txtDelete"
+            app:layout_constraintTop_toTopOf="@id/txtDelete"
+            android:textColor="@color/grey_66"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
