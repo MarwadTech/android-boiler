@@ -571,6 +571,8 @@
     <color name="grey_ed">#EDEDED</color>
     <color name="grey_d3">#d3d3d3</color>
     <color name="green_light_dark">#28A51E</color>
+    <color name="green_31BB00">#31BB00</color>
+    <color name="green_31BB00_10">#2632BA00</color>
     <color name="grey_8b">#8b8b8b</color>
     <color name="grey_d1">#d1d1d1</color>
     <color name="grey_54">#545454</color>
@@ -579,5 +581,11 @@
     <color name="fdebe8">#FDEBE8</color>
     <color name="rating_mango">#F0742E</color>
     <color name="white_fo">#f0f0f0</color>
+    <color name="black_1e">#1e1e1e</color>
+    <color name="blue_10">#1A007BFF</color>
+    <color name="black_grey">#3D4260</color>
+    <color name="grey_78858f">#78858F</color>
+    <color name="green_00aa5b">#00AA5B</color>
+    <color name="green_36B37E_20">#3336B37E</color>
 
 </resources>
