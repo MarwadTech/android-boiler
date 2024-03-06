@@ -3,11 +3,16 @@ package com.marwadtech.userapp.retrofit.repositoryImpl
 import android.app.Application
 import android.net.Uri
 import androidx.core.net.toFile
+import com.marwadtech.userapp.retrofit.PaginationModel
+import com.marwadtech.userapp.retrofit.PaginationRequestModel
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.AddressRequestModel
+import com.marwadtech.userapp.retrofit.models.request.ReviewRequestModel
+import com.marwadtech.userapp.retrofit.models.request.UpdatePasswordRequestModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.AddressResponseModel
 import com.marwadtech.userapp.retrofit.models.response.ImageResponseModel
+import com.marwadtech.userapp.retrofit.models.response.ReviewResponseModel
 import com.marwadtech.userapp.retrofit.models.response.UserResponseModel
 import com.marwadtech.userapp.retrofit.repository.ProfileRepository
 import com.marwadtech.userapp.retrofit.service.ProfileApi
@@ -72,4 +77,23 @@ class ProfileRepositoryImpl @Inject constructor(
         return handleResponse(handleRequest(app){profileApi.deleteUser()})
     }
 
+    override suspend fun giveAppRating(reviewRequestModel: ReviewRequestModel): BaseModel<ReviewResponseModel> {
+        return handleResponse(handleRequest(app) { profileApi.giveAppRating(reviewRequestModel)})
+    }
+
+    override suspend fun updatePassword(updatePasswordRequestModel: UpdatePasswordRequestModel): BaseModel<UserResponseModel> {
+        return handleResponse(handleRequest(app) { profileApi.updatePassword(updatePasswordRequestModel)})
+    }
+
+    override suspend fun getReviews(paginationRequestModel: PaginationRequestModel): BaseModel<PaginationModel<List<ReviewResponseModel>>> {
+        return handleResponse(
+            handleRequest(app) {
+                profileApi.getReviews(
+                    limit = paginationRequestModel.limit,
+                    page = paginationRequestModel.page,
+                    order = paginationRequestModel.order
+                )
+            }
+        )
+    }
 }

@@ -9,28 +9,34 @@ import androidx.fragment.app.clearFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.base.BaseFragment
-import com.marwadtech.userapp.databinding.FragmentDashboardBinding
 import com.marwadtech.userapp.databinding.FragmentProfileBinding
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.customModels.ProfileOptionsModel
 import com.marwadtech.userapp.retrofit.models.response.UserResponseModel
+import com.marwadtech.userapp.ui.bottomNavigation.UserDashboardActivity
 import com.marwadtech.userapp.ui.screens.profile.adapter.ProfileOptionAdapter
 import com.marwadtech.userapp.utils.BottomDialogRequestKey
+import com.marwadtech.userapp.utils.CommonDataKeys
 import com.marwadtech.userapp.utils.ProfileOptionId
 import com.marwadtech.userapp.utils.RequestKey
 import com.marwadtech.userapp.utils.ToastType
+import com.marwadtech.userapp.utils.gone
 import com.marwadtech.userapp.utils.logout
+import com.marwadtech.userapp.utils.openUrl
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment : BaseFragment() {
+class ProfileFragment :BaseFragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var accountAdapter: ProfileOptionAdapter
     private lateinit var aboutAdapter: ProfileOptionAdapter
     private lateinit var dangerAdapter: ProfileOptionAdapter
     private val viewModel by viewModels<ProfileViewModel>()
+    private lateinit var activity: UserDashboardActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -51,6 +57,7 @@ class ProfileFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+        activity = requireActivity() as UserDashboardActivity
         return binding.root
     }
 
@@ -70,13 +77,14 @@ class ProfileFragment : BaseFragment() {
     }
 
     private fun setAdapterData() {
+
         if (!::accountAdapter.isInitialized) {
             accountAdapter = ProfileOptionAdapter(spUtils) {
                 try {
                     when (it.id) {
                         ProfileOptionId.EDIT_PROFILE -> {
                             val directions =
-                                ProfileFragmentDirections.actionProfileFragmentToEditProfileBottomSheetFragment()
+                                ProfileFragmentDirections.actionProfileFragmentToEditProfileFragment()
                             findNavController().navigate(directions)
                         }
 
@@ -112,12 +120,16 @@ class ProfileFragment : BaseFragment() {
                             findNavController().navigate(directions)
                         }
 
-                        ProfileOptionId.PRIVACY_POLICY -> {
-
+                        ProfileOptionId.TERMS_AND_CONDITIONS -> {
+                            activity.commonDataList.singleOrNull { it.key?.uppercase() == CommonDataKeys.TERMS_AND_CONDITION }?.data?.apply {
+                                openUrl(requireActivity(), this)
+                            }
                         }
 
-                        ProfileOptionId.TERMS_AND_CONDITIONS -> {
-
+                        ProfileOptionId.PRIVACY_POLICY -> {
+                            activity.commonDataList.singleOrNull { it.key?.uppercase() == CommonDataKeys.PRIVACY_POLICY }?.data?.apply {
+                                openUrl(requireActivity(), this)
+                            }
                         }
                     }
                 } catch (e: Exception) {
@@ -167,6 +179,15 @@ class ProfileFragment : BaseFragment() {
         binding.txtMobileNumber.text = spUtils.user?.phoneNumber
         binding.txtLocation.text =
             spUtils.user?.addresses?.find { it.isDefault == true }.let { it?.city }
+        if (spUtils.user?.avatar != null) {
+            Glide.with(this).asDrawable().load(spUtils.user?.avatar?.picLarge)
+                .into(binding.imgProfile)
+        } else {
+            binding.imgProfile.setImageResource(R.drawable.ic_user_profile)
+        }
+        binding.ratingbar.gone()
+        binding.txtRatingCount.gone()
+        binding.imgCamera.gone()
     }
 
 
@@ -177,6 +198,7 @@ class ProfileFragment : BaseFragment() {
 
     private fun setOnClickListener() {
         binding.swipeRefreshLayout.setOnRefreshListener { refreshLayout() }
+
     }
 
     private fun handleGetUserDetailsResult(result: BaseModel<UserResponseModel>) {
@@ -263,6 +285,6 @@ class ProfileFragment : BaseFragment() {
 
 
     companion object {
-        private var TAG = FragmentDashboardBinding::class.java.name
+        private var TAG = FragmentProfileBinding::class.java.name
     }
 }

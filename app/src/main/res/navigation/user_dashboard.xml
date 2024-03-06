@@ -14,11 +14,13 @@
     <fragment
         android:id="@+id/navigate_home"
         android:name="com.marwadtech.userapp.ui.screens.home.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Home"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/navigate_notification"
         android:name="com.marwadtech.userapp.ui.screens.notification.NotificationFragment"
-        android:label="fragment_notification"
+        android:label="Notification"
         tools:layout="@layout/fragment_notification" />
+    <include app:graph="@navigation/nav_graph_image_selection" />
+    <include app:graph="@navigation/nav_internet" />
 </navigation>

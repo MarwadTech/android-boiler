@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".map.MapFragment">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lytFullAddress"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="visible"
+        android:background="@drawable/bottom_sheet_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imgDrag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:src="@drawable/ic_drag"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_0"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@drawable/shape_rounded_white_10"
+            android:backgroundTint="@color/light_purple_20"
+            app:layout_constraintBottom_toTopOf="@id/btnSaveNow"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/imgDrag" />
+
+        <ImageView
+            android:id="@+id/imgLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:src="@drawable/ic_location_purple"
+            app:layout_constraintEnd_toStartOf="@id/txtCity"
+            app:layout_constraintStart_toStartOf="@id/view"
+            app:layout_constraintTop_toTopOf="@id/view" />
+
+
+        <TextView
+            android:id="@+id/txtCity"
+            style="@style/materialText_medium_16"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:includeFontPadding="false"
+            android:hint="@string/click_to_get_location"
+            android:textAllCaps="true"
+            android:textColor="@color/purple"
+            app:layout_constraintBottom_toTopOf="@id/txtCityArea"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toEndOf="@id/imgLocation"
+            app:layout_constraintTop_toTopOf="@id/imgLocation" />
+
+        <TextView
+            android:id="@+id/txtCityArea"
+            style="@style/materialText_regular_10"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:text="lorem testing"
+            android:textColor="@color/light_purple"
+            app:layout_constraintBottom_toBottomOf="@id/view"
+            app:layout_constraintEnd_toEndOf="@id/txtCity"
+            app:layout_constraintStart_toStartOf="@id/txtCity"
+            app:layout_constraintTop_toBottomOf="@id/txtCity" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveNow"
+            style="@style/materialButton"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/proceed"
+            app:cornerRadius="@dimen/dimen_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

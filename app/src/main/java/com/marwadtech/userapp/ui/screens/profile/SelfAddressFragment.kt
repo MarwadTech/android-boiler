@@ -19,6 +19,7 @@ import com.marwadtech.userapp.ui.screens.profile.adapter.AddressAdapter
 import com.marwadtech.userapp.utils.BottomDialogRequestKey
 import com.marwadtech.userapp.utils.RequestKey
 import com.marwadtech.userapp.utils.ToastType
+import com.marwadtech.userapp.utils.setSingleClickListener
 import com.marwadtech.userapp.utils.visibleOrGone
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -72,6 +73,7 @@ class SelfAddressFragment : BaseFragment() {
 
     private fun setData() {
         binding.btnNext.visibleOrGone(!args.isFromProfile)
+
     }
 
     private fun setUpAdapter() {
@@ -90,12 +92,10 @@ class SelfAddressFragment : BaseFragment() {
                 },
                 updateListener = {
                     addressId = it.id
-                    val directions =
-                        SelfAddressFragmentDirections.actionSelfAddressFragmentToNestedBottomDialogFragment(
-                            title = getString(R.string.are_you_sure),
-                            description = getString(R.string.you_want_to_update_this_address),
-                            requestKey = BottomDialogRequestKey.UPDATE_ADDRESS
-                        )
+                    val directions = SelfAddressFragmentDirections.actionSelfAddressFragmentToDeliveryAddressFragment(
+                        addressData = it,
+                        mapFetchData = null
+                    )
                     findNavController().navigate(directions)
                 },
                 makeDefaultListener = {
@@ -107,7 +107,13 @@ class SelfAddressFragment : BaseFragment() {
     }
 
     private fun setOnClickListener() {
-
+        binding.btnAddMore.setSingleClickListener {
+            val directions = SelfAddressFragmentDirections.actionSelfAddressFragmentToDeliveryAddressFragment(
+                addressData = null,
+                mapFetchData = null
+            )
+            findNavController().navigate(directions)
+        }
     }
 
     private fun handleGetUserAddressResult(result: BaseModel<ArrayList<AddressResponseModel>>) {
@@ -159,7 +165,7 @@ class SelfAddressFragment : BaseFragment() {
                 Log.e(TAG, "handleDeleteUserAddressResult: isSuccessfully")
                 hideProgressbar()
                 result.data?.apply {
-
+                    viewModel.getUserAddress()
                 }
             }
 
@@ -199,7 +205,7 @@ class SelfAddressFragment : BaseFragment() {
                 Log.e(TAG, "handleMakeAddressDefaultResult: isSuccessfully")
                 hideProgressbar()
                 result.data?.apply {
-
+                    viewModel.getUserAddress()
                 }
             }
 

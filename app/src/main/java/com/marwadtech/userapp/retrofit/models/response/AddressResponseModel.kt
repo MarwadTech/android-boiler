@@ -52,7 +52,7 @@ data class AddressResponseModel(
 
     @SerializedName("pin_code")
     @Expose
-    var pinCode: Int? = null,
+    var pinCode: String? = null,
 
     @SerializedName("geo_location")
     @Expose

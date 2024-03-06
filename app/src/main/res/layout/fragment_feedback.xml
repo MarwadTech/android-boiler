@@ -47,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@id/txtFeedback"
                 app:srb_borderColor="@color/grey_6B"
                 app:srb_fillColor="@color/rating_green"
-                app:srb_rating="0"
+                app:srb_rating="5"
                 app:srb_starBorderWidth="2.5"
                 app:srb_starCornerRadius="15"
                 app:srb_starSize="@dimen/dimen_55"
