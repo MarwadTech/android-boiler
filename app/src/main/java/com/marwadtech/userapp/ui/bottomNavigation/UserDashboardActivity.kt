@@ -12,7 +12,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -32,8 +32,9 @@ import com.marwadtech.localfinds.internet.ConnectivityReceiver
 import com.marwadtech.userapp.R
 import com.marwadtech.userapp.base.BaseActivity
 import com.marwadtech.userapp.databinding.ActivityUserDashboardBinding
-import com.marwadtech.userapp.ui.bottomNavigationDrawer.BottomNavigationDrawerActivity
-import com.marwadtech.userapp.ui.navigationDrawer.NavigationDrawerActivity
+import com.marwadtech.userapp.retrofit.models.BaseModel
+import com.marwadtech.userapp.retrofit.models.response.CommonDataResponseModel
+import com.marwadtech.userapp.ui.auth.AuthViewModel
 import com.marwadtech.userapp.utils.SharedViewModel
 import com.marwadtech.userapp.utils.gone
 import com.marwadtech.userapp.utils.visible
@@ -53,6 +54,10 @@ class UserDashboardActivity : BaseActivity() {
     private val channelId = "channelId"
     private lateinit var notificationManager: NotificationManager
     private lateinit var sharedViewModel: SharedViewModel
+
+    var commonDataList: ArrayList<CommonDataResponseModel> = ArrayList()
+    private val authViewModel by viewModels<AuthViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedViewModel = ViewModelProvider(this)[SharedViewModel::class.java]
@@ -78,9 +83,27 @@ class UserDashboardActivity : BaseActivity() {
 
             when (destination.id) {
                 R.id.navigate_home -> {
+                    binding.bottomNavBar.visible()
                     setToolbar(
                         isVisible = true,
-                        isCenter = true
+                        isCenter = false,
+                        hasSubtitle = true
+                    )
+                }
+                R.id.navigate_notification->{
+                    binding.bottomNavBar.visible()
+                    setToolbar(
+                        isVisible = true,
+                        isCenter = false,
+                        hasSubtitle = false
+                    )
+                }
+                R.id.profileFragment->{
+                    binding.bottomNavBar.visible()
+                    setToolbar(
+                        isVisible = true,
+                        isCenter = false,
+                        hasSubtitle = false
                     )
                 }
                 R.id.selfAddressFragment,
@@ -91,8 +114,18 @@ class UserDashboardActivity : BaseActivity() {
                         isCenter = true
                     )
                 }
-                else -> {
+                R.id.bottomDialogFragment,
+                R.id.changePasswordBottomSheetFragment,
+                R.id.editProfileBottomSheetFragment->{
 
+                }
+                else -> {
+                    binding.bottomNavBar.gone()
+                    setToolbar(
+                        isVisible = true,
+                        isCenter = true,
+                        hasSubtitle = false
+                    )
                 }
 
             }
@@ -120,11 +153,15 @@ class UserDashboardActivity : BaseActivity() {
             }
         }
 
+        authViewModel.getCommonData.observe(this, this::handleGetCommonDataResult)
+        authViewModel.getCommonData()
+
     }
 
     private fun setToolbar(
         isVisible: Boolean = true,
         isCenter: Boolean = true,
+        hasSubtitle:Boolean = false,
         titleColor: Int = R.color.colorPrimary
     ) {
         val drawable: Drawable? = binding.toolbar.navigationIcon
@@ -135,6 +172,13 @@ class UserDashboardActivity : BaseActivity() {
                 titleColor
             )
         )
+
+        binding.toolbar.menu.findItem(R.id.toolbar_menu).isVisible = false
+        if (hasSubtitle) {
+            binding.toolbar.subtitle = getString(R.string.this_is_boilerplate)
+        } else {
+            binding.toolbar.subtitle = null
+        }
         if (isVisible) {
             binding.toolbar.visible()
         } else {
@@ -256,6 +300,28 @@ class UserDashboardActivity : BaseActivity() {
                 }
             }
         }
+
+    private fun handleGetCommonDataResult(result: BaseModel<ArrayList<CommonDataResponseModel>>) {
+        when {
+            result.isLoading() -> {
+                Log.e(TAG, "handleGetCommonDataResult: isLoading")
+//                showProgressbar()
+            }
+
+            result.isSuccessfully() -> {
+                Log.e(TAG, "handleGetCommonDataResult: isSuccessfully")
+//                hideProgressbar()
+                result.data?.apply {
+                    commonDataList = ArrayList(this)
+                }
+            }
+
+            result.isError() -> {
+                Log.e(TAG, "handleGetCommonDataResult: isError ${result.message}")
+//                hideProgressbar()
+            }
+        }
+    }
 
     companion object {
         private val TAG = UserDashboardActivity::class.java.name

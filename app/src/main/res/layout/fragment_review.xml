@@ -65,7 +65,7 @@
             >
 
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.marwadtech.userapp.utils.pagination.LoadMoreRecyclerView
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="@dimen/dimen_0"
                 tools:listitem="@layout/item_user_review_list"

@@ -71,3 +71,11 @@ object ProfileOptionId {
     const val DELETE_ACCOUNT = 8
     const val LOG_OUT = 9
 }
+object CommonDataKeys {
+    const val TERMS_AND_CONDITION = "TERMS_AND_CONDITION"
+    const val PRIVACY_POLICY = "PRIVACY_POLICY"
+    const val SHARE_MESSAGE = "SHARE_MESSAGE"
+    const val SUPPORT_PHONE_NUMBER = "SUPPORT_PHONE_NUMBER"
+    const val SUPPORT_EMAIL_ADDRESS = "SUPPORT_EMAIL_ADDRESS"
+    const val SUPPORT_WHATSAPP_NUMBER = "SUPPORT_WHATSAPP_NUMBER"
+}

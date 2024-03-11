@@ -215,5 +215,8 @@
     <string name="rupee">₹%d</string>
     <string name="payment_method_">Payment Method</string>
     <string name="you_selected">You selected</string>
+    <string name="discard">Discard</string>
+    <string name="click_to_get_location">Click to get location</string>
+    <string name="this_is_boilerplate">this is boilerplate</string>
 
 </resources>

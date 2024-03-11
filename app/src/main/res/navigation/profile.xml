@@ -12,7 +12,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.marwadtech.userapp.ui.screens.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_editProfileBottomSheetFragment"
@@ -48,6 +48,9 @@
                 android:name="requestKey"
                 app:nullable="false"/>
         </action>
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <dialog
         android:id="@+id/editProfileBottomSheetFragment"
@@ -62,8 +65,13 @@
     <fragment
         android:id="@+id/feedbackFragment"
         android:name="com.marwadtech.userapp.ui.screens.profile.FeedbackFragment"
-        android:label="fragment_feedback"
+        android:label="Feedback"
         tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
 
 
 </navigation>

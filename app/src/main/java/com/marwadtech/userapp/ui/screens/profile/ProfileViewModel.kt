@@ -5,11 +5,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.marwadtech.userapp.retrofit.PaginationModel
+import com.marwadtech.userapp.retrofit.PaginationRequestModel
 import com.marwadtech.userapp.retrofit.models.BaseModel
 import com.marwadtech.userapp.retrofit.models.request.AddressRequestModel
+import com.marwadtech.userapp.retrofit.models.request.ReviewRequestModel
+import com.marwadtech.userapp.retrofit.models.request.UpdatePasswordRequestModel
 import com.marwadtech.userapp.retrofit.models.request.UserRequestModel
 import com.marwadtech.userapp.retrofit.models.response.AddressResponseModel
 import com.marwadtech.userapp.retrofit.models.response.ImageResponseModel
+import com.marwadtech.userapp.retrofit.models.response.ReviewResponseModel
 import com.marwadtech.userapp.retrofit.models.response.UserResponseModel
 import com.marwadtech.userapp.retrofit.repository.ProfileRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +25,7 @@ import javax.inject.Inject
 class ProfileViewModel @Inject constructor(
     private val profileRepository: ProfileRepository
 ) : ViewModel() {
+
 
     private val _getUserDetails = MutableLiveData<BaseModel<UserResponseModel>>()
     val getUserDetails: LiveData<BaseModel<UserResponseModel>>
@@ -131,6 +137,42 @@ class ProfileViewModel @Inject constructor(
             _deleteImage.value = BaseModel.loading()
             _deleteImage.value = profileRepository.deleteImage(imageId)
             _deleteImage.value = BaseModel.clear()
+        }
+    }
+
+    private val _giveAppRating = MutableLiveData<BaseModel<ReviewResponseModel>>()
+    val giveAppRating: LiveData<BaseModel<ReviewResponseModel>>
+        get() = _giveAppRating
+
+    fun giveAppRating(reviewRequestModel: ReviewRequestModel) {
+        viewModelScope.launch {
+            _giveAppRating.value = BaseModel.loading()
+            _giveAppRating.value = profileRepository.giveAppRating(reviewRequestModel)
+            _giveAppRating.value = BaseModel.clear()
+        }
+    }
+
+    private val _updatePassword = MutableLiveData<BaseModel<UserResponseModel>>()
+    val updatePassword: LiveData<BaseModel<UserResponseModel>>
+        get() = _updatePassword
+
+    fun updatePassword(updatePasswordRequestModel: UpdatePasswordRequestModel) {
+        viewModelScope.launch {
+            _updatePassword.value = BaseModel.loading()
+            _updatePassword.value = profileRepository.updatePassword(updatePasswordRequestModel)
+            _updatePassword.value = BaseModel.clear()
+        }
+    }
+
+
+    private val _getReviews = MutableLiveData<BaseModel<PaginationModel<List<ReviewResponseModel>>>>()
+    val getReviews: LiveData<BaseModel<PaginationModel<List<ReviewResponseModel>>>>
+        get() = _getReviews
+
+    fun getReviews(paginationRequestModel: PaginationRequestModel) {
+        viewModelScope.launch {
+            _getReviews.value = BaseModel.loading()
+            _getReviews.value = profileRepository.getReviews(paginationRequestModel)
         }
     }
 

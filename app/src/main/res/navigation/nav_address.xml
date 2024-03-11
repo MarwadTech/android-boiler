@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/selfAddressFragment"
         android:name="com.marwadtech.userapp.ui.screens.profile.SelfAddressFragment"
-        android:label="fragment_self_address"
+        android:label="Address"
         tools:layout="@layout/fragment_self_address">
         <argument
             android:name="isFromProfile"
@@ -31,5 +31,36 @@
                 android:name="requestKey"
                 app:nullable="false"/>
         </action>
+        <action
+            android:id="@+id/action_selfAddressFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryAddressFragment"
+        android:name="com.marwadtech.userapp.ui.screens.profile.DeliveryAddressFragment"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_delivery_address" >
+        <argument
+            android:name="addressData"
+            app:argType="com.marwadtech.userapp.retrofit.models.response.AddressResponseModel"
+            app:nullable="true"/>
+        <argument
+            android:name="mapFetchData"
+            app:argType="com.marwadtech.userapp.retrofit.models.customModels.MapAddressModel"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/action_deliveryAddressFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.marwadtech.userapp.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment"
+            app:popUpTo="@+id/deliveryAddressFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
